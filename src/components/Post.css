@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.post-wrapper {
+  background-color: rgb(252, 249, 250);
+  padding: 10px;
+  margin: 20px 0;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+
+.post-header-wrapper {
+  display: flex;
+}
+
+.name-and-description-wrapper {
+  margin-left: 10px;
+}
+.name-and-description-wrapper h5 {
+  font-size: 16px;
+}
+.name-and-description-wrapper p {
+  font-size: 12px;
+}
+
+.postImage-wrapper img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.post-body {
+  text-align: left;
+}

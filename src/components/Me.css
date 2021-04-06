@@ -1,0 +1,34 @@
+.profile-wrapper {
+  margin: 20px 0;
+}
+
+.header-image-wrapper {
+  position: relative;
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/847/548/930/towns-hallstatt-austria-lake-mountain-hd-wallpaper-thumb.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 50px;
+}
+
+.profile-pic-wrapper {
+  position: absolute;
+  bottom: -50px;
+  left: 50px;
+}
+
+.profile-pic-wrapper img {
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.personal-information-div {
+  text-align: left;
+}
+
+.name-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
