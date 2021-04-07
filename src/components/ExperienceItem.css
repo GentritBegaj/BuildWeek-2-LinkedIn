@@ -1,0 +1,34 @@
+.experience-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+}
+
+.experience-item-text {
+  margin: 10px 0;
+  text-align: left;
+  line-height: 0.8;
+}
+
+.experience-item-image img {
+  width: 60px;
+  margin-right: 10px;
+}
+
+.experience-item-edit-icon {
+  display: none;
+  padding: 10px;
+  background-color: white;
+}
+
+.experience-item:hover .experience-item-edit-icon {
+  display: block;
+}
+
+.experience-item-edit-icon:hover {
+  cursor: pointer;
+  background-color: lavenderblush;
+  border-radius: 50%;
+}
