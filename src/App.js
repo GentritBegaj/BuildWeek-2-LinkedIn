@@ -1,25 +1,18 @@
 import "./App.css";
-import Header from "./components/Header";
+
+import NewsFeed from "./components/NewsFeed";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Follow from "./components/Follow";
-import Footer from "./components/Footer";
-import { Col, Row, Container } from "react-bootstrap";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Me from "./components/Me";
 
 function App() {
   return (
-    <Container>
-      <Row>
-        <Header />
-      </Row>
-      <Row>
-        <Col xs={2}></Col>
-        <Col xs={8}></Col>
-        <Col xs={4}>
-          {" "}
-          <Follow />
-        </Col>
-      </Row>
-    </Container>
+    <div className="App">
+      <Router>
+        <Route path="/" exact component={NewsFeed} />
+        <Route path="/me" exact component={Me} />
+      </Router>
+    </div>
   );
 }
 

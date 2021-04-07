@@ -1,0 +1,34 @@
+.main-wrapper {
+  margin: 20px 0;
+}
+
+.top-container-wrapper {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.top-container-item {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.image-wrapper img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.name-wrapper {
+  line-height: 0.7;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
