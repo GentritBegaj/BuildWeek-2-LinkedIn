@@ -153,6 +153,13 @@ export default class EditExperienceModal extends Component {
                   />
                 </Form.Group>
               </Row>
+              <Button
+                variant="danger"
+                className="rounded-pill"
+                onClick={() => this.handleDelete}
+              >
+                Delete
+              </Button>
               <Button variant="primary" className="rounded-pill" type="submit">
                 Save
               </Button>

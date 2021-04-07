@@ -14,7 +14,7 @@ const avatarUrl =
   "https://image.freepik.com/vector-gratis/avatar-cabeza-perro-lindo_79416-67.jpg";
 function Header() {
   return (
-    <Container className="main_header">
+    <Container fluid className="main_header">
       <Row className="header">
         <Col className="header_left">
           <div className="search">
