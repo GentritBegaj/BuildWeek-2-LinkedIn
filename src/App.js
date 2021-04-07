@@ -1,8 +1,8 @@
 import "./App.css";
-import Header from "./Components/Header";
+import Header from "./components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Follow from "./Components/Follow";
-import Footer from "./Components/Footer";
+import Follow from "./components/Follow";
+import Footer from "./components/Footer";
 import { Col, Row, Container } from "react-bootstrap";
 
 function App() {
