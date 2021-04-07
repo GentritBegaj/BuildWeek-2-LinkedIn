@@ -4,6 +4,7 @@ import { Col, Row } from "react-bootstrap";
 import NewsFeed from "./NewsFeed";
 import Header from "./Header";
 import Follow from "./Follow";
+import SideBar from "./SideBar";
 
 export default class HomePage extends Component {
   render() {
@@ -14,7 +15,9 @@ export default class HomePage extends Component {
         <br />
         <Container>
           <Row>
-            <Col xs={2}></Col>
+            <Col xs={2}>
+              <SideBar />
+            </Col>
             <Col xs={6}>
               <NewsFeed />
             </Col>

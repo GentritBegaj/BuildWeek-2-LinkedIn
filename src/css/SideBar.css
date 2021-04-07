@@ -1,0 +1,72 @@
+#profileWrapper {
+  font-weight: 400;
+}
+
+p {
+  margin: 0;
+}
+
+.card,
+.links {
+  border: 1px solid rgb(240, 231, 231);
+  border-radius: 10px;
+}
+
+.card {
+  text-align: left;
+}
+
+.imageWrapper {
+  position: relative;
+  border-bottom: 2px solid rgb(240, 231, 231);
+}
+.imageWrapper > p {
+  font-weight: 400;
+}
+.imageWrapper > :last-child {
+  margin-top: 100px;
+}
+
+#cardTop {
+  height: 3rem;
+  background-color: rgb(171, 193, 202);
+}
+
+#idImage {
+  position: absolute;
+  top: 20px;
+  /* left: 50px; */
+  transform: translateX(50%);
+  /* right: 10px; */
+  height: 90px;
+  width: 90px;
+  background-color: white;
+  border: 1px solid rgb(240, 231, 231);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#network {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  line-height: 0.7;
+}
+
+#premium {
+  line-height: 0.7;
+  padding: 1rem 0 1rem;
+}
+
+.links > :first-child {
+  text-align: left;
+  border-bottom: 2px solid rgb(240, 231, 231);
+  margin-bottom: 3px;
+}
+.links > :last-child {
+  color: rgb(175, 170, 170);
+}
+
+.links > :last-child::hover {
+  background-color: rgb(235, 235, 235);
+  cursor: pointer;
+}
