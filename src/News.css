@@ -1,0 +1,23 @@
+.list_course ol,
+.list_course li,
+.list_course small,
+.recommendations {
+  background-color: white;
+  margin: 0;
+}
+.list_course {
+  margin-top: 15px;
+}
+.follower_header {
+  font-size: medium;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.list_course ol {
+  margin-bottom: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.recommendations {
+  background-color: white;
+}

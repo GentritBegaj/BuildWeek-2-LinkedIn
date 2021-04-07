@@ -1,0 +1,15 @@
+.input-option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+.input-option h6 {
+  margin-top: 5px;
+}
+
+.input-option:hover {
+  background-color: lightgray;
+  border-radius: 10px;
+}
