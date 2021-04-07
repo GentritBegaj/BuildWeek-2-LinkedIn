@@ -1,14 +1,12 @@
 .input-option {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   cursor: pointer;
-  padding: 10px;
 }
 
 .input-option h6 {
   margin-top: 5px;
-  margin-left: 5px;
 }
 
 .input-option:hover {

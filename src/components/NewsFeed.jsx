@@ -8,8 +8,7 @@ export default class NewsFeed extends Component {
     return (
       <Container>
         <Row>
-          <Col xs={2}></Col>
-          <Col xs={6}>
+          <Col xs={12}>
             <CreatePost />
             <div
               className="my-5 mx-auto"
@@ -41,7 +40,6 @@ export default class NewsFeed extends Component {
               postImage="https://guidetoiceland.imgix.net/4828/x/0/mountains-in-iceland-2?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.3.0&w=1300&s=0a7056d899b0941b2092306b5e5fb542"
             />
           </Col>
-          <Col xs={4}></Col>
         </Row>
       </Container>
     );

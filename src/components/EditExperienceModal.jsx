@@ -13,6 +13,11 @@ export default class EditExperienceModal extends Component {
     },
   };
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.editUserExperience(this.state.experience);
+  };
+
   handleInput = (e) => {
     let id = e.target.id;
     this.setState({

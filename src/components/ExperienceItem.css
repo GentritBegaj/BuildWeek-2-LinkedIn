@@ -19,8 +19,6 @@
 
 .experience-item-edit-icon {
   display: none;
-  padding: 10px;
-  background-color: white;
 }
 
 .experience-item:hover .experience-item-edit-icon {
@@ -28,6 +26,9 @@
 }
 
 .experience-item-edit-icon:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   background-color: lavenderblush;
   border-radius: 50%;

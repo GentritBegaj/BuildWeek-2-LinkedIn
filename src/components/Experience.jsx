@@ -83,6 +83,31 @@ class Experience extends React.Component {
     }
   };
 
+   editUserExperience = aync (experience) => {
+  try {
+      const response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/606c195e6fd22800153fdbaf/experiences",
+        {
+          method: "POST",
+          body: JSON.stringify(experience),
+          headers: {
+            "Content-Type": "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMTk1ZTZmZDIyODAwMTUzZmRiYWYiLCJpYXQiOjE2MTc2OTcxMTksImV4cCI6MTYxODkwNjcxOX0.Cf16ByRhKv9VhM7o3j_Z2zkXHkrjpT88O9M26Cy9yN8",
+          },
+        }
+      );
+      if (response.ok) {
+        console.log("Experience added");
+        this.getUserExperiences();
+      } else {
+        console.log("Error while adding experience");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   componentDidMount = async () => {
     this.getUserInfo();
     this.getUserExperiences();
