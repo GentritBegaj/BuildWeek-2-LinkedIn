@@ -1,21 +1,16 @@
 import React, { Component } from "react";
-import { Button, Modal, Form, Col, Row } from "react-bootstrap";
+import { Modal, Button, Form, Col, Row } from "react-bootstrap";
 
-export default class EditExperienceModal extends Component {
+export default class AddExperienceModal extends Component {
   state = {
     experience: {
-      role: this.props.experience.role,
-      company: this.props.experience.company,
-      area: this.props.experience.area,
-      startDate: this.props.experience.startDate,
-      endDate: this.props.experience.endDate,
-      description: this.props.experience.description,
+      role: "",
+      company: "",
+      area: "",
+      startDate: "",
+      endDate: "",
+      description: "",
     },
-  };
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.editUserExperience(this.state.experience);
   };
 
   handleInput = (e) => {
@@ -26,7 +21,16 @@ export default class EditExperienceModal extends Component {
         [id]: e.target.value,
       },
     });
+    console.log(this.state.experience);
   };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state.experience);
+
+    this.props.addExperience(this.state.experience);
+  };
+
   render() {
     return (
       <div>

@@ -40,11 +40,21 @@ const Post = ({ name, description, postBody, profilePic, postImage }) => {
         <img src={postImage} alt="post-img" />
       </div>
       <div class="reactions-numerator"></div>
-      <div className="reactions-wrapper">
-        <InputOption Icon={ThumbUpAltIcon} title={"Like"} />
-        <InputOption Icon={ChatIcon} title={"Comment"} />
-        <InputOption Icon={ShareIcon} title={"Share"} />
-        <InputOption Icon={SendIcon} title={"Send"} />
+      <div className="reactions-wrapper container-fluid">
+        <div className="row">
+          <div className="col-3 ">
+            <InputOption Icon={ThumbUpAltIcon} title={"Like"} />
+          </div>
+          <div className="col-3 ">
+            <InputOption Icon={ChatIcon} title={"Comment"} />
+          </div>
+          <div className="col-3 ">
+            <InputOption Icon={ShareIcon} title={"Share"} />
+          </div>
+          <div className="col-3 ">
+            <InputOption Icon={SendIcon} title={"Send"} />
+          </div>
+        </div>
       </div>
       <AddComment profilePic={profilePic} />
     </div>
