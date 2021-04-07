@@ -1,4 +1,4 @@
-div.col-4 {
+#profileWrapper {
   font-weight: 400;
 }
 
@@ -35,7 +35,9 @@ p {
 #idImage {
   position: absolute;
   top: 20px;
-  left: 80px;
+  /* left: 50px; */
+  transform: translateX(50%);
+  /* right: 10px; */
   height: 90px;
   width: 90px;
   background-color: white;

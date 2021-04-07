@@ -8,62 +8,60 @@ import AddAPhotoOutlinedIcon from "@material-ui/icons/AddAPhotoOutlined";
 const SideBar = () => {
   return (
     <>
-      <Row>
-        <Col xs={3} className="flex-column align-itmes-center">
-          <div className="card mb-1">
-            <div className="imageWrapper">
-              <div id="cardTop"></div>
-              <div id="idImage">
-                <div className="d-flex flex-column align-items-center">
-                  {" "}
-                  <AddAPhotoOutlinedIcon />
-                </div>
-              </div>
-              <div className="d-flex flex-column text-center text-align-center">
-                <p>Welcome, Antoni!</p>
-                <a href="#">Add a photo</a>
-              </div>
+      <div is="profileWrapper" className="flex-column align-itmes-center">
+        <div className="card mb-1">
+          <div className="imageWrapper">
+            <div id="cardTop"></div>
+            <div
+              id="idImage"
+              className="d-flex align-items-center justify-content-center"
+            >
+              <AddAPhotoOutlinedIcon />
             </div>
-            <div id="network" className="mx-2">
-              <div className="d-flex justify-content-between">
-                <p>Connections</p>
-                <p>25</p>
-              </div>
-              <p>Grow your network</p>
+            <div className="d-flex flex-column text-center text-align-center">
+              <p>Welcome, Antoni!</p>
+              <a href="#">Add a photo</a>
             </div>
-            <div id="premium" className="mx-2">
-              <p>Access exclusive tools & insights</p>
-              <p>
-                <span>
-                  <StopIcon />
-                </span>
-                Reactivate Premium
-              </p>
+          </div>
+          <div id="network" className="mx-2">
+            <div className="d-flex justify-content-between">
+              <p>Connections</p>
+              <p>25</p>
             </div>
-            <p className="mx-2">
+            <p>Grow your network</p>
+          </div>
+          <div id="premium" className="mx-2">
+            <p>Access exclusive tools & insights</p>
+            <p>
               <span>
-                <TurnedInIcon />
+                <StopIcon />
               </span>
-              My items
+              Reactivate Premium
             </p>
           </div>
-          <div className="links">
-            <div>
-              <a href="#">Groups</a>
-              <div className="d-flex justify-content-between">
-                <a href="#">Events</a>
-                <span>
-                  <AddIcon />
-                </span>
-              </div>
-              <a href="#">Followed Hashtags</a>
+          <p className="mx-2">
+            <span>
+              <TurnedInIcon />
+            </span>
+            My items
+          </p>
+        </div>
+        <div className="links">
+          <div>
+            <a href="#">Groups</a>
+            <div className="d-flex justify-content-between">
+              <a href="#">Events</a>
+              <span>
+                <AddIcon />
+              </span>
             </div>
-            <div>
-              <p>Discover more</p>
-            </div>
+            <a href="#">Followed Hashtags</a>
           </div>
-        </Col>
-      </Row>
+          <div>
+            <p>Discover more</p>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
