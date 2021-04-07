@@ -1,0 +1,51 @@
+.main_box {
+  margin-top: 100px;
+}
+.MuiSvgIcon-root {
+  margin-right: 25px;
+  background-color: white;
+}
+.subtitle_feed,
+.subtitle_feed span {
+  background-color: white;
+  justify-content: space-between;
+}
+.subtitle_feed {
+  padding: 3px 0;
+  padding-left: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.footer_feed span {
+  background-color: white;
+}
+.footer_feed {
+  width: 100% !important;
+  background-color: white;
+  padding-left: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.follower_header {
+  font-size: small;
+  background-color: white;
+  padding: 0;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #252525;
+}
+.follower_header > h5,
+.follower_header > InfoIcon {
+  background-color: white;
+}
+.recommendations {
+  background-color: white;
+  margin-left: 15px;
+  color: gray;
+  cursor: pointer;
+}
+.recommendations:hover {
+  background-color: rgba(128, 128, 128, 0.384);
+}

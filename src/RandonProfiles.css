@@ -1,0 +1,53 @@
+.avatar_background {
+  padding: 0;
+  background-color: white;
+}
+.main_follower {
+  background-color: white;
+  padding-bottom: 15px;
+}
+.follow_button {
+  background-color: transparent;
+  color: gray;
+  border: 2px solid gray;
+  border-radius: 50px;
+  width: 100px;
+}
+.follow_button:hover {
+  background-color: rgba(89, 89, 98, 0.274);
+  border-color: rgb(65, 63, 63);
+  color: gray;
+}
+.follow_button::before {
+  content: " + ";
+  color: rgb(29, 28, 28);
+}
+.avatar_image {
+  background-color: white;
+  padding: 0;
+  margin-left: 15px;
+  display: flex;
+}
+.avatar_follower {
+  background-color: white;
+}
+.MuiAvatar-root {
+  width: 46px;
+  height: 46px;
+}
+.avatar_name {
+  background-color: white;
+  color: rgb(8, 7, 7);
+}
+.full_description {
+  background-color: white;
+  padding: 0;
+  align-items: center;
+  color: #0a66c2;
+}
+.full_description > p {
+  background-color: white;
+  color: gray;
+  font-size: 11px;
+  margin: 0;
+}

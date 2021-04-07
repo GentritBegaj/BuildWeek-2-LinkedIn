@@ -1,4 +1,5 @@
 import "./App.css";
+
 import NewsFeed from "./components/NewsFeed";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";

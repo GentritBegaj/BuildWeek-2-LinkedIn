@@ -1,0 +1,9 @@
+.add {
+  flex: 0.2;
+  top: 100px;
+  position: sticky;
+  height: 300px;
+  background-size: cover;
+  background-image: url("/src/add.png");
+  background-position: center center;
+}
