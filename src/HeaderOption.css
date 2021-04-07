@@ -1,0 +1,29 @@
+.header_option {
+  background-color: white;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: gray;
+  cursor: pointer;
+}
+.option_title {
+  background-color: white;
+  font-size: 12px;
+  font-weight: 400;
+}
+.header_option:hover {
+  color: black;
+}
+.options_icon {
+  background-color: white;
+  object-fit: contain;
+  height: 25px !important;
+  width: 25px !important;
+}
+.little_border {
+  border-right: 1px solid grey;
+}
+.dropdown_container {
+  background-color: white;
+}
