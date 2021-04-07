@@ -8,15 +8,10 @@ import { Col, Container, Row } from "react-bootstrap";
 function App() {
   return (
     <div>
+      <div className="d-flex justify-content-center">
+        <Header />
+      </div>
       <Router>
-        <Container>
-          <Row>
-            <Col>
-              <Header />
-            </Col>
-          </Row>
-        </Container>
-
         <Route path="/" exact component={HomePage} />
         <Route path="/me" exact component={Me} />
       </Router>

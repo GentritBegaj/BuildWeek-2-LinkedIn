@@ -45,6 +45,7 @@ const ExperienceItem = (props) => {
       <EditExperienceModal
         experience={props.experience}
         show={modalShow}
+        id={_id}
         onHide={() => setModalShow(false)}
       />
     </>
