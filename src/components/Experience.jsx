@@ -83,8 +83,8 @@ class Experience extends React.Component {
     }
   };
 
-   editUserExperience = aync (experience) => {
-  try {
+  editUserExperience = async (experience) => {
+    try {
       const response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/606c195e6fd22800153fdbaf/experiences",
         {
@@ -106,7 +106,7 @@ class Experience extends React.Component {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   componentDidMount = async () => {
     this.getUserInfo();
