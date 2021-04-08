@@ -33,7 +33,7 @@ const ExperienceItem = (props) => {
             <h5>{role}</h5>
             <p>
               {format(parseISO(startDate), "MM/yyyy")} -{" "}
-              {format(parseISO(endDate), "MM/yyyy")}
+              {endDate && format(parseISO(endDate), "MM/yyyy")}
             </p>
             <p>{description}</p>
             <p>London, United Kingdom</p>

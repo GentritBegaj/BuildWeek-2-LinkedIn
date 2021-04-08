@@ -47,6 +47,29 @@ export default class HomePage extends Component {
   //   this.getUserInfo();
   // };
 
+  addPosts = async (post) => {
+    try {
+      const response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/posts/",
+        {
+          method: "POST",
+          body: JSON.stringify(post),
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMTk1ZTZmZDIyODAwMTUzZmRiYWYiLCJpYXQiOjE2MTc2OTcxMTksImV4cCI6MTYxODkwNjcxOX0.Cf16ByRhKv9VhM7o3j_Z2zkXHkrjpT88O9M26Cy9yN8",
+          },
+        }
+      );
+
+      if (response.ok) {
+        console.log("post added");
+        this.getPosts();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   getPosts = async () => {
     try {
       const response = await fetch(
@@ -88,6 +111,7 @@ export default class HomePage extends Component {
               <NewsFeed
                 userInfo={this.state.userInfo}
                 posts={this.state.posts}
+                addPosts={this.addPosts}
               />
             </Col>
             <Col xs={4}>
