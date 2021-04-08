@@ -1,10 +1,6 @@
 #profileWrapper {
-  /* font-weight: 400; */
-  font-size: 0.9rem;
-}
-
-p {
-  margin: 0;
+  font-weight: 400;
+  font-size: 0.8rem;
 }
 
 .card,
@@ -29,6 +25,7 @@ p {
 
 .imageWrapper > :last-child {
   margin-top: 100px;
+  padding-bottom: 20px;
 }
 
 #cardTop {
@@ -39,16 +36,19 @@ p {
 #idImage {
   position: absolute;
   top: 20px;
-  /* left: 50px; */
+  left: 10% !important;
   transform: translateX(50%);
-  /* right: 10px; */
   height: 80px;
   width: 80px;
   background-color: white;
-
   border: 1px solid rgb(240, 231, 231);
   border-radius: 50%;
   overflow: hidden;
+}
+
+#idImage img {
+  width: 100%;
+  /* object-fit: contain; */
 }
 
 #network {
@@ -62,12 +62,33 @@ p {
   padding: 1rem 0 1rem;
 }
 
+#premium:last-child p {
+  font-weight: 700;
+}
+
+#premiumIcon {
+  height: 20px;
+  width: 20px;
+  background-color: #e7a23e;
+}
+
+.links {
+  background-color: white;
+}
+
+#bookmark {
+  margin-right: 0;
+}
+
 .links > :first-child {
+  padding: 0 0.8rem 0 0.8rem;
   text-align: left;
   border-bottom: 2px solid rgb(240, 231, 231);
   margin-bottom: 3px;
 }
 .links > :last-child {
+  text-align: center;
+  font-weight: 600;
   color: rgb(175, 170, 170);
 }
 

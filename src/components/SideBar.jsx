@@ -13,14 +13,11 @@ const SideBar = (props) => {
         <div className="card mb-1">
           <div className="imageWrapper">
             <div id="cardTop"></div>
-            <div
-              id="idImage"
-              className="d-flex align-items-center justify-content-center"
-            >
-              <img src="#" alt="Profile Image" />
+            <div id="idImage">
+              <img src={props.userInfo.image} alt="Profile Image" />
             </div>
-            <div className="d-flex flex-column text-center text-align-center">
-              <p>Welcome, Antoni!</p>
+            <div className="d-flex flex-column align-items-center text-center">
+              <p>Welcome, {props.userInfo.name}!</p>
               <a href="#">Add a photo</a>
             </div>
           </div>
@@ -34,9 +31,7 @@ const SideBar = (props) => {
           <div id="premium" className="mx-2">
             <p>Access exclusive tools & insights</p>
             <p>
-              <span>
-                <StopIcon />
-              </span>
+              <span id="premiumIcon"></span>
               Reactivate Premium
             </p>
           </div>
@@ -53,7 +48,7 @@ const SideBar = (props) => {
             <div className="d-flex justify-content-between">
               <a href="#">Events</a>
               <span>
-                <AddIcon />
+                <AddIcon id="bookmark" className="mx-0" />
               </span>
             </div>
             <a href="#">Followed Hashtags</a>
