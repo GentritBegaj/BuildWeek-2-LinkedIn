@@ -10,6 +10,7 @@ export default class Me extends Component {
     userInfo: {},
     experiences: [],
     experience: {},
+    userId: this.props.match.params.id,
   };
 
   getUsers = async () => {
@@ -38,7 +39,7 @@ export default class Me extends Component {
   getUserInfo = async () => {
     try {
       let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/me/`,
+        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userId}`,
         {
           headers: {
             Authorization:
@@ -61,7 +62,7 @@ export default class Me extends Component {
   getUserExperiences = async () => {
     try {
       let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userInfo._id}/experiences`,
+        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userId}/experiences`,
         {
           headers: {
             Authorization:
@@ -82,95 +83,19 @@ export default class Me extends Component {
     }
   };
 
-  addExperience = async (experience) => {
-    try {
-      const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userInfo._id}/experiences`,
-        {
-          method: "POST",
-          body: JSON.stringify(experience),
-          headers: {
-            "Content-Type": "application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMTk1ZTZmZDIyODAwMTUzZmRiYWYiLCJpYXQiOjE2MTc2OTcxMTksImV4cCI6MTYxODkwNjcxOX0.Cf16ByRhKv9VhM7o3j_Z2zkXHkrjpT88O9M26Cy9yN8",
-          },
-        }
-      );
-      if (response.ok) {
-        this.getUserExperiences();
-      } else {
-        console.log("Error while adding experience");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  editUserExperience = async (experience, experienceId) => {
-    try {
-      const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userInfo._id}/experiences/${experienceId}`,
-        {
-          method: "PUT",
-          body: JSON.stringify(experience),
-          headers: {
-            "Content-Type": "application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMTk1ZTZmZDIyODAwMTUzZmRiYWYiLCJpYXQiOjE2MTc2OTcxMTksImV4cCI6MTYxODkwNjcxOX0.Cf16ByRhKv9VhM7o3j_Z2zkXHkrjpT88O9M26Cy9yN8",
-          },
-        }
-      );
-      if (response.ok) {
-        this.getUserExperiences();
-      } else {
-        console.log("Error while editing experience");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  deleteUserExperience = async (experienceId) => {
-    try {
-      const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userInfo._id}/experiences/${experienceId}`,
-        {
-          method: "DELETE",
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMTk1ZTZmZDIyODAwMTUzZmRiYWYiLCJpYXQiOjE2MTc2OTcxMTksImV4cCI6MTYxODkwNjcxOX0.Cf16ByRhKv9VhM7o3j_Z2zkXHkrjpT88O9M26Cy9yN8",
-          },
-        }
-      );
-      if (response.ok) {
-        this.getUserExperiences();
-      } else {
-        console.log("Error while deleting experience");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   componentDidUpdate = (prevProps, prevState) => {
-    if (prevState.userInfo._id !== this.state.userInfo._id) {
-      this.getUserExperiences();
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.setState({ userId: this.props.match.params.id });
+      setTimeout(() => {
+        this.getUserInfo();
+        this.getUserExperiences();
+      }, 500);
     }
   };
 
   componentDidMount = () => {
-    this.getUserInfo();
     this.getUsers();
   };
-
-  // componentWillUnmount = () => {
-  //   this.setState({
-  //     users: [],
-  //     userInfo: {},
-  //     experiences: [],
-  //     experience: {},
-  //   });
-  // };
   render() {
     return (
       <>
@@ -183,11 +108,7 @@ export default class Me extends Component {
               <div className="profile-wrapper">
                 <div className="header-image-wrapper">
                   <div className="profile-pic-wrapper">
-                    <img
-                      src={this.state.userInfo.image}
-                      alt="profile-pic"
-                      width="100px"
-                    />
+                    <img src={this.state.userInfo.image} alt="profile-pic" />
                   </div>
                 </div>
                 <div className="personal-information-div">
@@ -229,16 +150,15 @@ export default class Me extends Component {
                 </div>
               </div>
 
-              <Experience
-                deleteUserExperience={this.deleteUserExperience}
-                editUserExperience={this.editUserExperience}
-                addExperience={this.addExperience}
-                getUserExperiences={this.getUserExperiences}
-                getUserInfo={this.getUserInfo}
-                users={this.state.users}
-                userInfo={this.state.userInfo}
-                experiences={this.state.experiences}
-              />
+              {this.state.experiences && (
+                <Experience
+                  getUserExperiences={this.getUserExperiences}
+                  getUserInfo={this.getUserInfo}
+                  users={this.state.users}
+                  userInfo={this.state.userInfo}
+                  experiences={this.state.experiences}
+                />
+              )}
             </Col>
             <Col xs={4}>
               <MeSidebar users={this.state.users} />

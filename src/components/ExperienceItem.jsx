@@ -3,9 +3,9 @@ import CreateIcon from "@material-ui/icons/Create";
 import "./ExperienceItem.css";
 import { format, parseISO } from "date-fns";
 import EditExperienceModal from "./EditExperienceModal";
+import { withRouter } from "react-router";
 
 const ExperienceItem = (props) => {
-  console.log("PROOOOOOPS", props);
   const [modalShow, setModalShow] = useState(false);
   const {
     area,
@@ -17,6 +17,7 @@ const ExperienceItem = (props) => {
     username,
     _id,
   } = props.experience;
+
   return (
     <>
       <div className="experience-item">
@@ -39,12 +40,19 @@ const ExperienceItem = (props) => {
           </div>
         </div>
         <div className="experience-item-edit-icon">
-          <CreateIcon onClick={() => setModalShow(true)} />
+          {!props.location.pathname === "/user" && (
+            <CreateIcon onClick={() => setModalShow(true)} />
+          )}
+          {props.location.pathname === "/me" && (
+            <CreateIcon onClick={() => setModalShow(true)} />
+          )}
         </div>
       </div>
       <EditExperienceModal
         experience={props.experience}
         show={modalShow}
+        editUserExperience={props.editUserExperience}
+        deleteUserExperience={props.deleteUserExperience}
         id={_id}
         onHide={() => setModalShow(false)}
       />
@@ -52,4 +60,4 @@ const ExperienceItem = (props) => {
   );
 };
 
-export default ExperienceItem;
+export default withRouter(ExperienceItem);
