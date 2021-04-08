@@ -9,6 +9,7 @@ import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
 import ChatIcon from "@material-ui/icons/SmsRounded";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import ViewModuleIcon from "@material-ui/icons/ViewModule";
+import { Link } from "react-router-dom";
 import DropDown from "./DropDown";
 const avatarUrl =
   "https://image.freepik.com/vector-gratis/avatar-cabeza-perro-lindo_79416-67.jpg";
@@ -17,18 +18,22 @@ function Header() {
     <Container fluid className="main_header">
       <Row className="header">
         <Col className="header_left">
-          <div className="search">
-            <img src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg" />
-            <SearchIcon style={{ backgroundColor: "#eef3f8" }} />
-            <input type="text" placeholder="Search" />
-          </div>
+          <Link to="/">
+            <div className="search">
+              <img src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg" />
+              <SearchIcon style={{ backgroundColor: "#eef3f8" }} />
+              <input type="text" placeholder="Search" />
+            </div>
+          </Link>
           <div className="header_right">
             <HeaderOption Icon={HomeIcon} title="Home" />
             <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
             <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
             <HeaderOption Icon={ChatIcon} title="Messaging" />
             <HeaderOption Icon={NotificationsIcon} title="Notifications" />
-            <HeaderOption avatar={avatarUrl} title="Me" />
+            <Link to="/me">
+              <HeaderOption avatar={avatarUrl} title="Me" />
+            </Link>
             <HeaderOption
               className="border"
               Icon={ViewModuleIcon}

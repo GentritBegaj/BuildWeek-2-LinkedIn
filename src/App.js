@@ -10,12 +10,12 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <div className="d-flex justify-content-center">
-          <Header
-          // userInfo={this.state.userInfo}
-          />
-        </div>
         <Router>
+          <div className="d-flex justify-content-center">
+            <Header
+            // userInfo={this.state.userInfo}
+            />
+          </div>
           <Route
             path="/"
             exact
