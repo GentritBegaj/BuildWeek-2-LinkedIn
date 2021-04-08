@@ -5,7 +5,8 @@ import StopIcon from "@material-ui/icons/Stop";
 import AddIcon from "@material-ui/icons/Add";
 import AddAPhotoOutlinedIcon from "@material-ui/icons/AddAPhotoOutlined";
 
-const SideBar = () => {
+const SideBar = (props) => {
+  console.log("My props", props);
   return (
     <>
       <div id="profileWrapper" className="flex-column align-itmes-center">

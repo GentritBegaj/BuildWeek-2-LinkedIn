@@ -45,7 +45,7 @@ export default class HomePage extends Component {
         <Container>
           <Row>
             <Col xs={2}>
-              <SideBar />
+              <SideBar userInfo={this.state.userInfo} />
             </Col>
             <Col xs={6}>
               <NewsFeed posts={this.state.posts} />
