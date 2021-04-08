@@ -34,7 +34,7 @@ const PersonalDashboard = () => {
         </Col>
       </div>
 
-      <div className="personal-dashboard-my-items-wrapper my-4">
+      <div className="personal-dashboard-my-items-wrapper mt-4">
         <div>
           <TurnedInIcon style={{ backgroundColor: "transparent" }} />
         </div>
