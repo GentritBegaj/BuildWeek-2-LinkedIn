@@ -6,6 +6,35 @@ import Header from "./Header";
 import Follow from "./Follow";
 
 export default class HomePage extends Component {
+  state = {
+    posts: [],
+  };
+  getPosts = async () => {
+    try {
+      const response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/posts/",
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMTk1ZTZmZDIyODAwMTUzZmRiYWYiLCJpYXQiOjE2MTc2OTcxMTksImV4cCI6MTYxODkwNjcxOX0.Cf16ByRhKv9VhM7o3j_Z2zkXHkrjpT88O9M26Cy9yN8",
+          },
+        }
+      );
+      if (response.ok) {
+        const data = await response.json();
+        this.setState({ posts: data });
+        console.log("POSTS", this.state.posts);
+      } else {
+        console.log("Error while fetching posts");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  componentDidMount = () => {
+    this.getPosts();
+  };
   render() {
     return (
       <>
@@ -16,7 +45,7 @@ export default class HomePage extends Component {
           <Row>
             <Col xs={2}></Col>
             <Col xs={6}>
-              <NewsFeed />
+              <NewsFeed posts={this.state.posts} />
             </Col>
             <Col xs={4}>
               <Follow />
