@@ -5,11 +5,12 @@ import Post from "./Post";
 
 export default class NewsFeed extends Component {
   render() {
+    console.log("USERINFONEWSS", this.props.userInfo);
     return (
       <Container>
         <Row>
           <Col xs={12}>
-            <CreatePost />
+            <CreatePost userInfo={this.props.userInfo} />
             <div
               className="my-5 mx-auto"
               style={{
