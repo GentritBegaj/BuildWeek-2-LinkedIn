@@ -17,6 +17,9 @@
   .border-top {
     display: none;
   }
+  .img_footer {
+    margin-left: 156px;
+  }
 }
 .select_lang {
   border-radius: 10px;

@@ -35,3 +35,8 @@
 .post-body {
   text-align: left;
 }
+@media only screen and (max-width: 767px) {
+  .reactions-wrapper {
+    margin: 10px;
+  }
+}

@@ -75,7 +75,7 @@ const Post = ({
               <InputOption Icon={ThumbUpAltIcon} title={"Like"} />
             </div>
             <div className="col-3 ">
-              <InputOption Icon={ChatIcon} title={"Comment"} />
+              <InputOption Icon={ChatIcon} title={"Comnt"} />
             </div>
             <div className="col-3 ">
               <InputOption Icon={ShareIcon} title={"Share"} />

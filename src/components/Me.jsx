@@ -170,9 +170,9 @@ export default class Me extends Component {
         <br />
         <br />
         <br />
-        <Container className="mb-5">
+        <Container className="mb-5 fluid p-0">
           <Row>
-            <Col xs={12} md={8}>
+            <Col xs={12} md={8} className="pr-0">
               <div className="profile-wrapper">
                 <div className="header-image-wrapper">
                   <div className="profile-pic-wrapper">
@@ -247,7 +247,7 @@ export default class Me extends Component {
                 experiences={this.state.experiences}
               />
             </Col>
-            <Col xs={12} md={4}>
+            <Col xs={12} md={4} className="pr-0">
               <MeSidebar users={this.state.users} />
             </Col>
           </Row>

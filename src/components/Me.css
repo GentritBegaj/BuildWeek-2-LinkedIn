@@ -20,7 +20,16 @@ body {
 }
 @media only screen and (max-width: 767px) {
   .header-image-wrapper {
-    width: 50%;
+    padding: 0;
+    margin: 0;
+    height: 180px;
+    width: 100%;
+  }
+  .profile-pic-wrapper img {
+    height: 140px !important;
+    width: 140px !important;
+    position: relative;
+    left: -19px;
   }
 }
 .profile-pic-wrapper {
@@ -40,6 +49,11 @@ body {
   padding: 10px;
   text-align: left;
   line-height: 1.5;
+}
+@media only screen and (max-width: 767px) {
+  .personal-information-div {
+    margin-top: 40px;
+  }
 }
 
 .name-wrapper {

@@ -18,23 +18,26 @@ function Header() {
     <Container fluid className="main_header">
       <Row className="header">
         <Col className="header_left">
-          <Link to="/">
-            <div className="search">
+          <div className="search">
+            <Link to="/">
               <img src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg" />
-              <SearchIcon style={{ backgroundColor: "#eef3f8" }} />
-              <input type="text" placeholder="Search" />
-            </div>
-          </Link>
+            </Link>
+            <SearchIcon style={{ backgroundColor: "#eef3f8" }} />
+            <input type="text" placeholder="Search" />
+          </div>
           <div className="header_right">
             <HeaderOption Icon={HomeIcon} title="Home" />
             <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
             <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
             <HeaderOption Icon={ChatIcon} title="Messaging" />
             <HeaderOption Icon={NotificationsIcon} title="Notifications" />
-            <Link to="/me">
-              <HeaderOption avatar={avatarUrl} title="Me" />
-            </Link>
+            <div className="border-right">
+              <Link to="/me">
+                <HeaderOption avatar={avatarUrl} title="Me" />
+              </Link>
+            </div>
             <HeaderOption
+              changing
               className="border"
               Icon={ViewModuleIcon}
               title="Work"

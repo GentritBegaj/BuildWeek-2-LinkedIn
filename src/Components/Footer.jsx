@@ -8,6 +8,7 @@ function Footer() {
     <Container style={{ lineHeight: 2.5 }}>
       <Row>
         <img
+          className="img_footer"
           src="https://www.vectorlogo.zone/logos/linkedin/linkedin-ar21.svg"
           alt=""
         />
@@ -44,7 +45,7 @@ function Footer() {
         <Col xs={3}>
           <div>
             <div className="icon_position">
-              <HelpIcon />
+              <HelpIcon style={{ backgroundColor: "#F3F2EF" }} />
               <h6> Questions?</h6>
             </div>
             <small
@@ -55,7 +56,7 @@ function Footer() {
           </div>
           <div>
             <div className="icon_position">
-              <SettingsIcon style={{ backgroundColor: "gray" }} />
+              <SettingsIcon style={{ backgroundColor: "#F3F2EF" }} />
               <h6>Manage your account and privacy</h6>
               <small
                 style={{ position: "absolute", marginLeft: 25, marginTop: 35 }}

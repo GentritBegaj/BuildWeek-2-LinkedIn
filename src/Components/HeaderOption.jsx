@@ -2,7 +2,7 @@ import React from "react";
 import "../HeaderOption.css";
 import DropDown from "./DropDown";
 import { Avatar } from "@material-ui/core";
-function HeaderOption({ avatar, Icon, title }) {
+function HeaderOption({ avatar, Icon, title, changing }) {
   return (
     <div className="header_option">
       {Icon && <Icon className="options_icon" />}
@@ -14,6 +14,7 @@ function HeaderOption({ avatar, Icon, title }) {
         {" "}
         <h3 className="option_title text-center">{title}</h3>
         {avatar && <DropDown />}
+        {changing && <DropDown />}
       </div>
     </div>
   );

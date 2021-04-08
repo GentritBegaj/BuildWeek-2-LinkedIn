@@ -53,12 +53,9 @@ function Follow(props) {
       </Row>
       <Row>
         <Col>
-          <Advertisement />
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Contacts users={props.users} />
+          <div className="adv">
+            <Advertisement />
+          </div>
         </Col>
       </Row>
     </Container>

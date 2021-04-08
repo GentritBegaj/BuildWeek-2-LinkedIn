@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import { FormControl, Dropdown } from "react-bootstrap";
-import RandonProfiles from "./RandonProfiles";
-const RandomAvatarsBill =
-  "https://pbs.twimg.com/profile_images/988775660163252226/XpgonN0X.jpg";
 class DropDown extends React.Component {
   render() {
     const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
@@ -60,7 +57,7 @@ class DropDown extends React.Component {
         <Dropdown.Menu>
           <Dropdown.Item eventKey="1"></Dropdown.Item>
           <Dropdown.Item eventKey="2"></Dropdown.Item>
-          <Dropdown.Item eventKey="3">Working on it</Dropdown.Item>
+          <Dropdown.Item eventKey="3"></Dropdown.Item>
           <Dropdown.Item eventKey="1"></Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
