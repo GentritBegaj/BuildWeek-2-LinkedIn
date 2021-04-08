@@ -8,7 +8,7 @@ import AddAPhotoOutlinedIcon from "@material-ui/icons/AddAPhotoOutlined";
 const SideBar = () => {
   return (
     <>
-      <div is="profileWrapper" className="flex-column align-itmes-center">
+      <div id="profileWrapper" className="flex-column align-itmes-center">
         <div className="card mb-1">
           <div className="imageWrapper">
             <div id="cardTop"></div>
@@ -16,7 +16,7 @@ const SideBar = () => {
               id="idImage"
               className="d-flex align-items-center justify-content-center"
             >
-              <AddAPhotoOutlinedIcon />
+              <img src="#" alt="Profile Image" />
             </div>
             <div className="d-flex flex-column text-center text-align-center">
               <p>Welcome, Antoni!</p>

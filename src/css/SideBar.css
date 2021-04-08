@@ -1,5 +1,6 @@
 #profileWrapper {
-  font-weight: 400;
+  /* font-weight: 400; */
+  font-size: 0.9rem;
 }
 
 p {
@@ -19,10 +20,13 @@ p {
 .imageWrapper {
   position: relative;
   border-bottom: 2px solid rgb(240, 231, 231);
+  line-height: 0.7;
 }
-.imageWrapper > p {
-  font-weight: 400;
+
+.imageWrapper p {
+  font-weight: 700;
 }
+
 .imageWrapper > :last-child {
   margin-top: 100px;
 }
@@ -38,9 +42,10 @@ p {
   /* left: 50px; */
   transform: translateX(50%);
   /* right: 10px; */
-  height: 90px;
-  width: 90px;
+  height: 80px;
+  width: 80px;
   background-color: white;
+
   border: 1px solid rgb(240, 231, 231);
   border-radius: 50%;
   overflow: hidden;
