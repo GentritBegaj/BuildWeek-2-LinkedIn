@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Image, Row } from "react-bootstrap";
+import { Container, Image, Row, Button } from "react-bootstrap";
 import { withRouter } from "react-router";
 import "./Contact.css";
 
@@ -20,11 +20,13 @@ class Contact extends Component {
             />
           </div>
           <div className="name-wrapper">
-            <h6>{this.props.user.name}</h6>
-            <p>{this.props.user.title.slice(0, 40)}</p>
+            <h6 className="p-0 m-1">{this.props.user.name}</h6>
+            <p className="p-0 m-1" style={{ fontSize: 13, color: "gray" }}>
+              {this.props.user.title.slice(0, 40)}
+            </p>
             <div className="button-wrapper">
               <button
-                className="btn  btn-outline text-muted contact-button"
+                className="follow_button_contact"
                 onClick={() =>
                   this.props.history.push(`/user/${this.props.user._id}`)
                 }
