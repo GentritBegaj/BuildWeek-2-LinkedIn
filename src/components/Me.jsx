@@ -4,6 +4,7 @@ import "./Me.css";
 import Experience from "./Experience";
 import MeSidebar from "./MeSidebar";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+import PersonalDashboard from "./PersonalDashboard";
 
 export default class Me extends Component {
   state = {
@@ -222,19 +223,22 @@ export default class Me extends Component {
                 </div>
               </div>
 
-              <div className="profile-strength-wrapper">
-                <div className="profile-strength-header d-flex justify-content-between">
-                  <h4 className="font-weight-normal">
-                    Profile Strength: <strong>Intermediate</strong>
-                  </h4>
+              <div className="profile-strength-wrapper mt-3">
+                <div className="mb-3 profile-strength-header d-flex justify-content-between">
+                  <h5 className="font-weight-normal">
+                    Profile Strength:{" "}
+                    <span className="font-weight-bold">Intermediate</span>
+                  </h5>
                   <KeyboardArrowDownIcon
                     style={{ backgroundColor: "transparent" }}
                   />
                 </div>
                 <div>
-                  <ProgressBar now={60} />
+                  <ProgressBar now={70} />
                 </div>
               </div>
+
+              <PersonalDashboard />
 
               <Experience
                 deleteUserExperience={this.deleteUserExperience}

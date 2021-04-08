@@ -43,7 +43,7 @@ export default class EditExperienceModal extends Component {
         <Modal {...this.props}>
           <Form onSubmit={this.handleSubmit}>
             <Modal.Header>
-              <Modal.Title>Add experience</Modal.Title>
+              <Modal.Title>Edit or delete experience</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <Form.Group>
