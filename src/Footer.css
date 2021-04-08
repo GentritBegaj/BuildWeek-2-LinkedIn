@@ -1,0 +1,26 @@
+.border-top {
+  font-size: small;
+  color: #56687a;
+}
+.border-top ul li {
+  list-style-type: none;
+}
+.icon_position {
+  position: relative;
+  display: flex !important;
+  margin-top: 10px;
+}
+.icon_position > h6 {
+  margin: 0;
+}
+@media only screen and (max-width: 767px) {
+  .border-top {
+    display: none;
+  }
+}
+.select_lang {
+  border-radius: 10px;
+  height: 30px;
+  width: 100%;
+  background-color: transparent;
+}
