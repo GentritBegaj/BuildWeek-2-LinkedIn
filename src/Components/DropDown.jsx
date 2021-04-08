@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import { FormControl, Dropdown } from "react-bootstrap";
-
+import RandonProfiles from "./RandonProfiles";
+const RandomAvatarsBill =
+  "https://pbs.twimg.com/profile_images/988775660163252226/XpgonN0X.jpg";
 class DropDown extends React.Component {
   render() {
     const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
       <a
+        style={{
+          backgroundColor: "white",
+          color: "gray",
+        }}
         href=""
         ref={ref}
         onClick={(e) => {
@@ -13,7 +19,7 @@ class DropDown extends React.Component {
         }}
       >
         {children}
-        &#x25bc;
+        &#x25BE;
       </a>
     ));
     const CustomMenu = React.forwardRef(
@@ -34,7 +40,7 @@ class DropDown extends React.Component {
               onChange={(e) => setValue(e.target.value)}
               value={value}
             />
-            <ul className="list-unstyled">
+            <ul className="list-unstyl">
               {React.Children.toArray(children).filter(
                 (child) =>
                   !value || child.props.children.toLowerCase().startsWith(value)
@@ -49,18 +55,13 @@ class DropDown extends React.Component {
         <Dropdown.Toggle
           as={CustomToggle}
           variant="Secondary"
-          style={{
-            color: "white",
-          }}
         ></Dropdown.Toggle>
 
-        <Dropdown.Menu as={CustomMenu}>
-          <Dropdown.Item eventKey="1">Red</Dropdown.Item>
-          <Dropdown.Item eventKey="2">Blue</Dropdown.Item>
-          <Dropdown.Item eventKey="3" active>
-            Orange
-          </Dropdown.Item>
-          <Dropdown.Item eventKey="1">Red-Orange</Dropdown.Item>
+        <Dropdown.Menu>
+          <Dropdown.Item eventKey="1"></Dropdown.Item>
+          <Dropdown.Item eventKey="2"></Dropdown.Item>
+          <Dropdown.Item eventKey="3">Working on it</Dropdown.Item>
+          <Dropdown.Item eventKey="1"></Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     );

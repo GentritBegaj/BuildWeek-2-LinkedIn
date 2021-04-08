@@ -13,19 +13,21 @@ function News() {
             Today’s most viewed courses
             <InfoIcon />
           </div>
-          <ol>
-            <li>The Six Morning Habits of High Performers</li>
-            <small>Pete Mockaitis | How to Be Awesome at Your Job</small>
-            <li>Daniel Pinks on Motivation</li>
-            <small>Daniel Pinks</small>
-            <li>Speaking Confidently and Effectively</li>
-            <small>Pete Mockaitis | How to Be Awesome at Your Job</small>
-            <span className="recommendations">
-              {" "}
-              View all recommendations
-              <ArrowRightAltIcon style={{ backgroundColor: "white" }} />
-            </span>
-          </ol>
+          <div>
+            <ul>
+              <li>The Six Morning Habits of High Performers</li>
+              <small>Pete Mockaitis | How to Be Awesome at Your Job</small>
+              <li>Daniel Pinks on Motivation</li>
+              <small>Daniel Pinks</small>
+              <li>Speaking Confidently and Effectively</li>
+              <small>Pete Mockaitis | How to Be Awesome at Your Job</small>
+              <li className="recommendations">
+                {" "}
+                View all recommendations
+                <ArrowRightAltIcon style={{ backgroundColor: "white" }} />
+              </li>
+            </ul>
+          </div>
         </div>
       </Row>
     </Container>

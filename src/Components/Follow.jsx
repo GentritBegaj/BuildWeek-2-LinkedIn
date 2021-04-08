@@ -19,8 +19,8 @@ function Follow() {
       <Row>
         <Col>
           <div className="subtitle_feed">
-            <span>Add to your feed</span>
-            <InfoIcon style={{ boxSizing: 10 }} />
+            Add to your feed
+            <InfoIcon />
           </div>
           <RandonProfiles
             name="Bill Gates"
@@ -38,6 +38,7 @@ function Follow() {
             avatar={RandomAvatarRichard}
             description="Founder at Virgin"
           />
+
           <div className="footer_feed">
             <span>View all recommendations</span>
             <ArrowRightAltIcon />

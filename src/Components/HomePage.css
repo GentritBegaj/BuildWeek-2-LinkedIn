@@ -1,0 +1,14 @@
+@media only screen and (max-width: 767px) {
+  .side_bar {
+    display: none;
+  }
+  .follow {
+    display: none;
+  }
+  .news_feed {
+    width: 100%;
+  }
+  .delete_this {
+    display: none;
+  }
+}

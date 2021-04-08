@@ -11,7 +11,7 @@ export default class NewsFeed extends Component {
           <Col xs={12}>
             <CreatePost />
             <div
-              className="my-5 mx-auto"
+              className="my-2 mx-auto"
               style={{
                 width: "90%",
                 height: "0",

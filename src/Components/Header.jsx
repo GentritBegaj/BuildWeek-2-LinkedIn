@@ -28,9 +28,13 @@ function Header() {
             <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
             <HeaderOption Icon={ChatIcon} title="Messaging" />
             <HeaderOption Icon={NotificationsIcon} title="Notifications" />
-            <HeaderOption avatar={avatarUrl} title="me" />
-            <ViewModuleIcon />
-            {/*<DropDown />*/}
+            <HeaderOption avatar={avatarUrl} title="Me" />
+            <HeaderOption
+              className="border"
+              Icon={ViewModuleIcon}
+              title="Work"
+            />
+            <HeaderOption title="Try Premium Free for 1 Month" />
           </div>
         </Col>
       </Row>

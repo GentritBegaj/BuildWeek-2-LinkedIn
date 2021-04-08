@@ -1,22 +1,25 @@
 .avatar_background {
-  padding: 0;
+  padding-right: 0px !important;
+  padding-left: 15px !important;
   background-color: white;
 }
-.main_follower {
+.avatar_background {
   background-color: white;
   padding-bottom: 15px;
 }
 .follow_button {
-  background-color: transparent;
-  color: gray;
-  border: 2px solid gray;
-  border-radius: 50px;
-  width: 100px;
+  background-color: transparent !important;
+  color: gray !important;
+  border: 2px solid gray !important;
+  border-radius: 50px !important;
+  width: 100px !important;
+  height: 30px;
+  padding: 0 !important;
 }
 .follow_button:hover {
-  background-color: rgba(89, 89, 98, 0.274);
-  border-color: rgb(65, 63, 63);
-  color: gray;
+  background-color: rgba(89, 89, 98, 0.274) !important;
+  border-color: rgb(65, 63, 63) !important;
+  color: gray !important;
 }
 .follow_button::before {
   content: " + ";
@@ -24,8 +27,7 @@
 }
 .avatar_image {
   background-color: white;
-  padding: 0;
-  margin-left: 15px;
+  margin-left: 0px;
   display: flex;
 }
 .avatar_follower {
@@ -40,6 +42,7 @@
   color: rgb(8, 7, 7);
 }
 .full_description {
+  padding-left: 0px !important;
   background-color: white;
   padding: 0;
   align-items: center;
