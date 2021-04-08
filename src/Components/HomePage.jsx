@@ -171,8 +171,8 @@ export default class HomePage extends Component {
         <br />
         <Container>
           <Row>
-            <Col className="side_bar" style={{ paddingRight: 0 }} xs={2}>
-              <SideBar />
+            <Col xs={2} className="px-0 side_bar">
+              <SideBar userInfo={this.state.userInfo} />
             </Col>
             <Col
               className="news_feed"
