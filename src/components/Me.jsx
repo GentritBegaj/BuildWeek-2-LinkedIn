@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, ProgressBar, Row } from "react-bootstrap";
 import "./Me.css";
 import Experience from "./Experience";
 import MeSidebar from "./MeSidebar";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 
 export default class Me extends Component {
   state = {
@@ -25,7 +26,7 @@ export default class Me extends Component {
       );
       if (response.ok) {
         const data = await response.json();
-        this.setState({ users: data.slice(0, 30) });
+        this.setState({ users: data.slice(0, 10) });
         console.log("UUUUUUUUUS", this.state.users);
       } else {
         console.log("Error while fetching users");
@@ -163,14 +164,6 @@ export default class Me extends Component {
     this.getUsers();
   };
 
-  // componentWillUnmount = () => {
-  //   this.setState({
-  //     users: [],
-  //     userInfo: {},
-  //     experiences: [],
-  //     experience: {},
-  //   });
-  // };
   render() {
     return (
       <>
@@ -226,6 +219,20 @@ export default class Me extends Component {
                       More...
                     </Button>
                   </div>
+                </div>
+              </div>
+
+              <div className="profile-strength-wrapper">
+                <div className="profile-strength-header d-flex justify-content-between">
+                  <h4 className="font-weight-normal">
+                    Profile Strength: <strong>Intermediate</strong>
+                  </h4>
+                  <KeyboardArrowDownIcon
+                    style={{ backgroundColor: "transparent" }}
+                  />
+                </div>
+                <div>
+                  <ProgressBar now={60} />
                 </div>
               </div>
 

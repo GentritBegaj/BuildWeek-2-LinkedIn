@@ -23,7 +23,7 @@ export default class NewsFeed extends Component {
             ></div>
             {this.props.posts.length > 0 &&
               this.props.posts
-                .slice(455)
+                .slice(0, 10)
                 .map((post) => (
                   <Post
                     userInfo={this.props.userInfo}

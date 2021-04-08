@@ -26,7 +26,7 @@ export default class Me extends Component {
       );
       if (response.ok) {
         const data = await response.json();
-        this.setState({ users: data.slice(0, 30) });
+        this.setState({ users: data.slice(0, 10) });
         console.log("UUUUUUUUUS", this.state.users);
       } else {
         console.log("Error while fetching users");

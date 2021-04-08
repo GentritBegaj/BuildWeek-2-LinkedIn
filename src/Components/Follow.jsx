@@ -6,8 +6,9 @@ import "../Follow.css";
 import InfoIcon from "@material-ui/icons/Info";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import Advertisement from "./Advertisement";
+import Contacts from "./Contacts";
 
-function Follow() {
+function Follow(props) {
   const RandomAvatarsBill =
     "https://pbs.twimg.com/profile_images/988775660163252226/XpgonN0X.jpg";
   const RandomAvatarsUni =
@@ -53,6 +54,11 @@ function Follow() {
       <Row>
         <Col>
           <Advertisement />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Contacts users={props.users} />
         </Col>
       </Row>
     </Container>

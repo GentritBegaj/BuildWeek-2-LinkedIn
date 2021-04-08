@@ -11,11 +11,31 @@ export default class HomePage extends Component {
   state = {
     posts: [],
     userInfo: {},
+    users: [],
   };
 
-  // state = {
-  //   userInfo: {},
-  // };
+  getUsers = async () => {
+    try {
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/",
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMTk1ZTZmZDIyODAwMTUzZmRiYWYiLCJpYXQiOjE2MTc2OTcxMTksImV4cCI6MTYxODkwNjcxOX0.Cf16ByRhKv9VhM7o3j_Z2zkXHkrjpT88O9M26Cy9yN8",
+          },
+        }
+      );
+      if (response.ok) {
+        const data = await response.json();
+        this.setState({ users: data.slice(0, 10) });
+      } else {
+        console.log("Error while fetching users");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   getUserInfo = async () => {
     try {
       let response = await fetch(
@@ -38,16 +58,6 @@ export default class HomePage extends Component {
       console.log(error);
     }
   };
-
-  // componentDidUpdate = (prevProps, prevState) => {
-  //   if (prevState.userInfo._id !== this.state.userInfo._id) {
-  //     this.getUserInfo();
-  //   }
-  // };
-
-  // componentDidMount = () => {
-  //   this.getUserInfo();
-  // };
 
   addPosts = async (post) => {
     try {
@@ -88,7 +98,7 @@ export default class HomePage extends Component {
       );
       if (response.ok) {
         const data = await response.json();
-        this.setState({ posts: data });
+        this.setState({ posts: data.reverse() });
         console.log("POSTS", this.state.posts);
       } else {
         console.log("Error while fetching posts");
@@ -151,6 +161,7 @@ export default class HomePage extends Component {
   componentDidMount = () => {
     this.getPosts();
     this.getUserInfo();
+    this.getUsers();
   };
   render() {
     return (
@@ -182,7 +193,7 @@ export default class HomePage extends Component {
               style={{ paddingRight: 0, paddingLeft: 0 }}
               xs={4}
             >
-              <Follow />
+              <Follow users={this.state.users} />
             </Col>
           </Row>
         </Container>
