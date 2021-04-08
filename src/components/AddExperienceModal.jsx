@@ -21,14 +21,13 @@ export default class AddExperienceModal extends Component {
         [id]: e.target.value,
       },
     });
-    console.log(this.state.experience);
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.experience);
 
     this.props.addExperience(this.state.experience);
+    this.props.onHide();
   };
 
   render() {

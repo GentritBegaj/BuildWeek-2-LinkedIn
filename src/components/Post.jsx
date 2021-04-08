@@ -8,7 +8,14 @@ import SendIcon from "@material-ui/icons/Send";
 import InputOption from "./InputOption";
 import AddComment from "./AddComment";
 
-const Post = ({ name, description, postBody, profilePic, postImage }) => {
+const Post = ({
+  name,
+  surname,
+  description,
+  postBody,
+  profilePic,
+  postImage,
+}) => {
   const [expanded, setExpanded] = useState(false);
   const executeOnClick = () => {
     setExpanded(true);
@@ -20,7 +27,9 @@ const Post = ({ name, description, postBody, profilePic, postImage }) => {
           <img src={profilePic} alt="profile-pic" width="50px" />
         </div>
         <div className="name-and-description-wrapper">
-          <h5>{name}</h5>
+          <h5>
+            {name} {surname}
+          </h5>
           <p>{description}</p>
         </div>
       </div>
