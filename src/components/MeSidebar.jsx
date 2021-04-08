@@ -18,7 +18,9 @@ const MeSidebar = (props) => {
           <HelpOutlineIcon />
         </div>
       </div>
-      <PromotedContainer style={{ cursor: "pointer" }} />
+      <div className="addvertisment">
+        <PromotedContainer style={{ cursor: "pointer" }} />
+      </div>
 
       <Contacts users={props.users} />
     </div>

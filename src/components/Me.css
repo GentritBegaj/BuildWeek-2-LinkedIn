@@ -18,7 +18,11 @@ body {
   height: 300px;
   margin-bottom: 50px;
 }
-
+@media only screen and (max-width: 767px) {
+  .header-image-wrapper {
+    width: 50%;
+  }
+}
 .profile-pic-wrapper {
   position: absolute;
   bottom: -50px;
