@@ -57,6 +57,7 @@ export default class HomePage extends Component {
           method: "POST",
           body: JSON.stringify(post),
           headers: {
+            "Content-Type": "application/json",
             Authorization:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMTk1ZTZmZDIyODAwMTUzZmRiYWYiLCJpYXQiOjE2MTc2OTcxMTksImV4cCI6MTYxODkwNjcxOX0.Cf16ByRhKv9VhM7o3j_Z2zkXHkrjpT88O9M26Cy9yN8",
           },
@@ -66,6 +67,8 @@ export default class HomePage extends Component {
       if (response.ok) {
         console.log("post added");
         this.getPosts();
+      } else {
+        console.log("Error while adding post");
       }
     } catch (error) {
       console.log(error);
@@ -95,12 +98,61 @@ export default class HomePage extends Component {
     }
   };
 
+  editPosts = async (post, postId) => {
+    try {
+      const response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/posts/" + postId,
+        {
+          method: "PUT",
+          body: JSON.stringify(post),
+          headers: {
+            "Content-Type": "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMTk1ZTZmZDIyODAwMTUzZmRiYWYiLCJpYXQiOjE2MTc2OTcxMTksImV4cCI6MTYxODkwNjcxOX0.Cf16ByRhKv9VhM7o3j_Z2zkXHkrjpT88O9M26Cy9yN8",
+          },
+        }
+      );
+
+      if (response.ok) {
+        console.log("post edited");
+        this.getPosts();
+      } else {
+        console.log("Error while adding post");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  deletePosts = async (postId) => {
+    try {
+      const response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/posts/" + postId,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMTk1ZTZmZDIyODAwMTUzZmRiYWYiLCJpYXQiOjE2MTc2OTcxMTksImV4cCI6MTYxODkwNjcxOX0.Cf16ByRhKv9VhM7o3j_Z2zkXHkrjpT88O9M26Cy9yN8",
+          },
+        }
+      );
+
+      if (response.ok) {
+        console.log("post deleted");
+        this.getPosts();
+      } else {
+        console.log("Error while deleting post");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   componentDidMount = () => {
     this.getPosts();
     this.getUserInfo();
   };
   render() {
-    console.log("USERINFOHME", this.state.userInfo);
     return (
       <>
         <br className="delete_this" />
@@ -121,6 +173,8 @@ export default class HomePage extends Component {
                 userInfo={this.state.userInfo}
                 posts={this.state.posts}
                 addPosts={this.addPosts}
+                editPosts={this.editPosts}
+                deletePosts={this.deletePosts}
               />
             </Col>
             <Col

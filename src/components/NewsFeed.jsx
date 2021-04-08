@@ -23,16 +23,21 @@ export default class NewsFeed extends Component {
             ></div>
             {this.props.posts.length > 0 &&
               this.props.posts
-                .slice(0, 30)
+                .slice(455)
                 .map((post) => (
                   <Post
+                    userInfo={this.props.userInfo}
                     key={post._id}
+                    postId={post._id}
                     name={post.user.name}
                     surname={post.user.surname}
+                    postUserId={post.user._id}
                     description={post.user.title}
                     postBody={post.text}
                     profilePic={post.user.image}
                     postImage="https://guidetoiceland.imgix.net/4828/x/0/mountains-in-iceland-2?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.3.0&w=1300&s=0a7056d899b0941b2092306b5e5fb542"
+                    editPosts={this.props.editPosts}
+                    deletePosts={this.props.deletePosts}
                   />
                 ))}
           </Col>

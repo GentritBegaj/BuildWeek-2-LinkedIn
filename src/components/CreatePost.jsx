@@ -8,6 +8,19 @@ import "./CreatePost.css";
 import { Container, Row, Col } from "react-bootstrap";
 
 export default class CreatePost extends Component {
+  state = {
+    postObj: {
+      text: "",
+    },
+  };
+
+  handleSubmit = (e) => {
+    console.log(this.state.postObj);
+    e.preventDefault();
+    this.props.addPosts(this.state.postObj);
+    this.setState({ postObj: { text: "" } });
+  };
+
   render() {
     return (
       <Container className="start-post-wrapper">
@@ -19,8 +32,21 @@ export default class CreatePost extends Component {
             />
           </Col>
           <Col xs={12} lg={10} className="input-div">
-            <form>
-              <input type="text" placeholder="Start a post" />
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="text"
+                id="text"
+                placeholder="Start a post"
+                value={this.state.postObj.text}
+                onChange={(e) =>
+                  this.setState({
+                    postObj: {
+                      ...this.state.postObj,
+                      [e.target.id]: e.target.value,
+                    },
+                  })
+                }
+              />
               <button type="submit">Send</button>
             </form>
           </Col>
