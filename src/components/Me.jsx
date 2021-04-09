@@ -239,7 +239,6 @@ export default class Me extends Component {
               </div>
 
               <PersonalDashboard />
-
               <Experience
                 deleteUserExperience={this.deleteUserExperience}
                 editUserExperience={this.editUserExperience}
