@@ -1,6 +1,7 @@
 #profileWrapper {
   font-weight: 400;
   font-size: 0.8rem;
+  margin-top: 10.4px;
 }
 
 .card,
@@ -31,6 +32,8 @@
 #cardTop {
   height: 3rem;
   background-color: rgb(171, 193, 202);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 #idImage {

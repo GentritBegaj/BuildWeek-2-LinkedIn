@@ -52,6 +52,8 @@ export default class Me extends Component {
       if (response.ok) {
         let data = await response.json();
         this.setState({ userInfo: data });
+        console.log("USERINFO", this.state.userInfo);
+        this.getUserExperiences(data._id);
       } else {
         console.log("Error while fetching profile");
       }
@@ -60,10 +62,11 @@ export default class Me extends Component {
     }
   };
 
-  getUserExperiences = async () => {
+  getUserExperiences = async (id) => {
     try {
       let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userInfo._id}/experiences`,
+        `https://striveschool-api.herokuapp.com/api/profile/606c195e6fd22800153fdbaf
+/experiences`,
         {
           headers: {
             Authorization:
@@ -84,7 +87,7 @@ export default class Me extends Component {
     }
   };
 
-  addExperience = async (experience) => {
+  addExperience = async (experience, pic) => {
     try {
       const response = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${this.state.userInfo._id}/experiences`,
@@ -99,7 +102,12 @@ export default class Me extends Component {
         }
       );
       if (response.ok) {
-        this.getUserExperiences();
+        const data = await response.json();
+        console.log("RESPONSEEEEEEEEBODYYYYY", data);
+
+        await this.addExperiencePhoto(data._id, pic);
+
+        await this.getUserExperiences();
       } else {
         console.log("Error while adding experience");
       }
@@ -154,11 +162,39 @@ export default class Me extends Component {
     }
   };
 
-  componentDidUpdate = (prevProps, prevState) => {
-    if (prevState.userInfo._id !== this.state.userInfo._id) {
-      this.getUserExperiences();
+  addExperiencePhoto = async (experienceId, pic) => {
+    console.log("in add exp photo", experienceId, pic);
+    let formData = new FormData();
+    formData.append("experience", pic);
+
+    try {
+      const response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userInfo._id}/experiences/${experienceId}/picture`,
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMTk1ZTZmZDIyODAwMTUzZmRiYWYiLCJpYXQiOjE2MTc2OTcxMTksImV4cCI6MTYxODkwNjcxOX0.Cf16ByRhKv9VhM7o3j_Z2zkXHkrjpT88O9M26Cy9yN8",
+          },
+        }
+      );
+      console.log(response);
+      if (response.ok) {
+        console.log("PICTURE ADDED");
+      } else {
+        console.log("ERROR WHILE ADDING PICTURE");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
+
+  // componentDidUpdate = (prevProps, prevState) => {
+  //   if (prevState.userInfo._id !== this.state.userInfo._id) {
+  //     this.getUserExperiences();
+  //   }
+  // };
 
   componentDidMount = () => {
     this.getUserInfo();

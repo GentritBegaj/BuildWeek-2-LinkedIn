@@ -10,9 +10,9 @@ function Advertisement() {
       <Container>
         <Row>
           <Col>
-            <div className="ul_list">
+            <div className="ul_list" style={{ lineHeight: 2, padding: "30px" }}>
               <ul>
-                <li class="global-footer-compact__item">
+                <li className="global-footer-compact__item">
                   <a
                     tabindex="0"
                     data-control-name="compactfooter.about"
@@ -20,12 +20,12 @@ function Advertisement() {
                     target="_blank"
                     href="https://about.linkedin.com"
                     id="compactfooter-about"
-                    class="global-footer__link t-12 t-normal ember-view"
+                    className="global-footer__link t-12 t-normal ember-view"
                   >
                     <span>About</span>
                   </a>
                 </li>
-                <li class="global-footer-compact__item">
+                <li className="global-footer-compact__item">
                   <a
                     tabindex="0"
                     data-control-name="compactfooter.accessibility"
@@ -33,12 +33,12 @@ function Advertisement() {
                     target="_blank"
                     href="https://www.linkedin.com/accessibility"
                     id="compactfooter-accessibility"
-                    class="global-footer__link t-12 t-normal ember-view"
+                    className="global-footer__link t-12 t-normal ember-view"
                   >
                     <span>Accessibility</span>
                   </a>
                 </li>
-                <li class="global-footer-compact__item">
+                <li className="global-footer-compact__item">
                   <a
                     tabindex="0"
                     data-control-name="compactfooter.accessibility"
@@ -46,12 +46,12 @@ function Advertisement() {
                     target="_blank"
                     href="https://www.linkedin.com/accessibility"
                     id="compactfooter-accessibility"
-                    class="global-footer__link t-12 t-normal ember-view"
+                    className="global-footer__link t-12 t-normal ember-view"
                   >
                     <span>Help Center</span>
                   </a>
                 </li>
-                <li class="global-footer-compact__item">
+                <li className="global-footer-compact__item">
                   <a
                     tabindex="0"
                     data-control-name="compactfooter.accessibility"
@@ -59,12 +59,12 @@ function Advertisement() {
                     target="_blank"
                     href="https://www.linkedin.com/accessibility"
                     id="compactfooter-accessibility"
-                    class="global-footer__link t-12 t-normal ember-view"
+                    className="global-footer__link t-12 t-normal ember-view"
                   >
                     <span>Privacy & Terms</span>
                   </a>
                 </li>
-                <li class="global-footer-compact__item">
+                <li className="global-footer-compact__item">
                   <a
                     tabindex="0"
                     data-control-name="compactfooter.accessibility"
@@ -72,12 +72,12 @@ function Advertisement() {
                     target="_blank"
                     href="https://www.linkedin.com/accessibility"
                     id="compactfooter-accessibility"
-                    class="global-footer__link t-12 t-normal ember-view"
+                    className="global-footer__link t-12 t-normal ember-view"
                   >
                     <span>Ad Choices</span>
                   </a>
                 </li>
-                <li class="global-footer-compact__item">
+                <li className="global-footer-compact__item">
                   <a
                     tabindex="0"
                     data-control-name="compactfooter.accessibility"
@@ -85,12 +85,12 @@ function Advertisement() {
                     target="_blank"
                     href="https://www.linkedin.com/accessibility"
                     id="compactfooter-accessibility"
-                    class="global-footer__link t-12 t-normal ember-view"
+                    className="global-footer__link t-12 t-normal ember-view"
                   >
                     <span>Advertising</span>
                   </a>
                 </li>
-                <li class="global-footer-compact__item">
+                <li className="global-footer-compact__item">
                   <a
                     tabindex="0"
                     data-control-name="compactfooter.accessibility"
@@ -98,12 +98,12 @@ function Advertisement() {
                     target="_blank"
                     href="https://www.linkedin.com/accessibility"
                     id="compactfooter-accessibility"
-                    class="global-footer__link t-12 t-normal ember-view"
+                    className="global-footer__link t-12 t-normal ember-view"
                   >
                     <span>Business Services</span>
                   </a>
                 </li>
-                <li class="global-footer-compact__item">
+                <li className="global-footer-compact__item">
                   <a
                     tabindex="0"
                     data-control-name="compactfooter.accessibility"
@@ -111,12 +111,12 @@ function Advertisement() {
                     target="_blank"
                     href="https://www.linkedin.com/accessibility"
                     id="compactfooter-accessibility"
-                    class="global-footer__link t-12 t-normal ember-view"
+                    className="global-footer__link t-12 t-normal ember-view"
                   >
                     <span>Get the LinkedIn</span>
                   </a>
                 </li>
-                <li class="global-footer-compact__item">
+                <li className="global-footer-compact__item">
                   <a
                     tabindex="0"
                     data-control-name="compactfooter.accessibility"
@@ -124,7 +124,7 @@ function Advertisement() {
                     target="_blank"
                     href="https://www.linkedin.com/accessibility"
                     id="compactfooter-accessibility"
-                    class="global-footer__link t-12 t-normal ember-view"
+                    className="global-footer__link t-12 t-normal ember-view"
                   >
                     <span>More</span>
                   </a>
@@ -139,7 +139,9 @@ function Advertisement() {
             src="https://www.vectorlogo.zone/logos/linkedin/linkedin-ar21.svg"
             alt=""
           />
-          <span className="copyright">LinkedIn Corporation © 2021</span>
+          <span style={{ fontSize: 11 }} className="copyright">
+            LinkedIn Corporation © 2021
+          </span>
         </Row>
       </Container>
     </>

@@ -69,7 +69,7 @@ const Post = ({
           <img src={postImage} alt="post-img" />
         </div>
         <div class="reactions-numerator"></div>
-        <div className="reactions-wrapper container-fluid">
+        <div className="reactions-wrapper container-fluid my-2">
           <div className="row">
             <div className="col-3 ">
               <InputOption Icon={ThumbUpAltIcon} title={"Like"} />
