@@ -5,7 +5,9 @@
 }
 
 .post-wrapper {
+  contain: content;
   background-color: rgb(252, 249, 250);
+  text-overflow: clip;
   padding: 20px;
   margin: 20px 0;
   border: 1px solid lightgrey;
@@ -34,9 +36,14 @@
 
 .post-body {
   text-align: left;
+  contain: content;
 }
 @media only screen and (max-width: 767px) {
   .reactions-wrapper {
     margin: 10px;
+  }
+  .post-body {
+    width: 100%;
+    max-width: 50%;
   }
 }
