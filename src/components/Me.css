@@ -48,6 +48,10 @@ body {
   height: 100px;
 }
 
+.profile-pic-wrapper img:hover {
+  cursor: pointer;
+}
+
 .personal-information-div {
   padding: 10px;
   text-align: left;

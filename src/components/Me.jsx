@@ -5,7 +5,7 @@ import Experience from "./Experience";
 import MeSidebar from "./MeSidebar";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import PersonalDashboard from "./PersonalDashboard";
-import Footer from "./Footer";
+import AddProfileImage from "./AddProfileImage";
 
 export default class Me extends Component {
   state = {
@@ -13,6 +13,7 @@ export default class Me extends Component {
     userInfo: {},
     experiences: [],
     experience: {},
+    profileImageModal: false,
   };
 
   getUsers = async () => {
@@ -218,6 +219,8 @@ export default class Me extends Component {
                       src={this.state.userInfo.image}
                       alt="profile-pic"
                       width="100px"
+                      onClick={() => this.setState({ profileImageModal: true })}
+                      // onClick={AddProfileImage}
                     />
                   </div>
                 </div>
@@ -292,7 +295,10 @@ export default class Me extends Component {
             </Col>
           </Row>
         </Container>
-        <Footer />
+        <AddProfileImage
+          show={this.state.profileImageModal}
+          handleHide={() => this.setState({ profileImageModal: false })}
+        />
       </>
     );
   }
