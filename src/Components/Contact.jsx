@@ -21,8 +21,8 @@ class Contact extends Component {
           </div>
           <div className="name-wrapper">
             <h6 className="p-0 m-1">{this.props.user.name}</h6>
-            <p className="p-0 m-1" style={{ fontSize: 13, color: "gray" }}>
-              {this.props.user.title.slice(0, 40)}
+            <p className="p-0 m-1" style={{ color: "gray" }}>
+              {this.props.user.title.slice(0, 30)}
             </p>
             <div className="button-wrapper">
               <button
