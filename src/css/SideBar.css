@@ -42,19 +42,13 @@
 #idImage {
   position: absolute;
   top: 10%;
-  left: 20%;
+  left: 23%;
   max-width: 50%;
   background-color: white;
   border: 1px solid rgb(240, 231, 231);
   border-radius: 50%;
   overflow: hidden;
 }
-
-/* @media screen and (max-width: 1000px) {
-  #idImage {
-    transform: translateX(40%);
-  }
-} */
 
 #idImage img {
   width: 100%;

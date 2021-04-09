@@ -30,7 +30,7 @@ export default class NewsFeed extends Component {
             )}
             {this.props.posts.length > 0 &&
               this.props.posts
-                .slice(0, 10)
+                .slice(0, 30)
                 .map((post) => (
                   <Post
                     userInfo={this.props.userInfo}
