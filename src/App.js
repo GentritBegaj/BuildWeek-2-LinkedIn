@@ -29,7 +29,6 @@ class App extends React.Component {
             render={(routerProps) => <Profile {...routerProps} />}
           />
         </Router>
-        <Footer />
       </>
     );
   }

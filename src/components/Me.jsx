@@ -5,6 +5,7 @@ import Experience from "./Experience";
 import MeSidebar from "./MeSidebar";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import PersonalDashboard from "./PersonalDashboard";
+import Footer from "./Footer";
 
 export default class Me extends Component {
   state = {
@@ -291,6 +292,7 @@ export default class Me extends Component {
             </Col>
           </Row>
         </Container>
+        <Footer />
       </>
     );
   }

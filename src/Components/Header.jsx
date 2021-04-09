@@ -10,6 +10,7 @@ import ChatIcon from "@material-ui/icons/SmsRounded";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import ViewModuleIcon from "@material-ui/icons/ViewModule";
 import { Link } from "react-router-dom";
+import PersonIcon from "@material-ui/icons/Person";
 import DropDown from "./DropDown";
 const avatarUrl =
   "https://image.freepik.com/vector-gratis/avatar-cabeza-perro-lindo_79416-67.jpg";
@@ -25,6 +26,11 @@ function Header() {
             <SearchIcon style={{ backgroundColor: "#eef3f8" }} />
             <input type="text" placeholder="Search" />
           </div>
+          <Link to="/me">
+            <div id="small_icon">
+              <PersonIcon />
+            </div>
+          </Link>
           <div className="header_right">
             <HeaderOption Icon={HomeIcon} title="Home" />
             <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
