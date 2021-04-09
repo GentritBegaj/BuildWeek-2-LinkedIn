@@ -16,11 +16,18 @@
   display: flex;
 }
 
+.profilePic-wrapper:hover {
+  cursor: pointer;
+}
+
 .name-and-description-wrapper {
   margin-left: 10px;
 }
 .name-and-description-wrapper h5 {
   font-size: 16px;
+}
+.name-and-description-wrapper h5:hover {
+  cursor: pointer;
 }
 .name-and-description-wrapper p {
   font-size: 12px;

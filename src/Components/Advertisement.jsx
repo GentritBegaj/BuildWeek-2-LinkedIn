@@ -5,7 +5,7 @@ import "../Advertisement.css";
 
 function Advertisement() {
   return (
-    <div>
+    <div className="wrapper sticky-top">
       <div className="add"></div>
       <Container>
         <Row>

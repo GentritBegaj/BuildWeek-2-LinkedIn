@@ -22,7 +22,7 @@ export default class NewsFeed extends Component {
               }}
             ></div>
             {this.props.posts.length === 0 && (
-              <div className="d-flex justify-content-center align-items-center mt-5">
+              <div className="d-flex justify-content-center">
                 <Spinner animation="border" role="status">
                   <span className="sr-only">Loading...</span>
                 </Spinner>
@@ -42,7 +42,7 @@ export default class NewsFeed extends Component {
                     description={post.user.title}
                     postBody={post.text}
                     profilePic={post.user.image}
-                    postImage="https://guidetoiceland.imgix.net/4828/x/0/mountains-in-iceland-2?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.3.0&w=1300&s=0a7056d899b0941b2092306b5e5fb542"
+                    postImage={post.image}
                     editPosts={this.props.editPosts}
                     deletePosts={this.props.deletePosts}
                   />

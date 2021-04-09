@@ -1,5 +1,5 @@
 import React from "react-bootstrap";
-import "./LoadingSpinner";
+import "./LoadingSpinner.css";
 
 const LoadingSpinner = () => {
   return (
@@ -7,7 +7,7 @@ const LoadingSpinner = () => {
       <div class="logo-img">
         <img
           src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg"
-          alt=""
+          alt="spinner"
         />
       </div>
       <div class="loader"></div>

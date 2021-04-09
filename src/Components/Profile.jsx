@@ -89,7 +89,7 @@ export default class Me extends Component {
       setTimeout(() => {
         this.getUserInfo();
         this.getUserExperiences();
-      }, 500);
+      }, 100);
     }
   };
 

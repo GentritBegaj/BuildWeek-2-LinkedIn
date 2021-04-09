@@ -11,6 +11,7 @@
 .add-comment-wrapper img {
   width: 50px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .add-comment-wrapper form {

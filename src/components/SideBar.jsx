@@ -9,7 +9,7 @@ const SideBar = (props) => {
   console.log("My props", props);
   return (
     <>
-      <div id="profileWrapper" className="flex-column align-itmes-center">
+      <div id="profileWrapper" className="flex-column align-items-center">
         <div className="card mb-1">
           <div className="imageWrapper">
             <div id="cardTop"></div>

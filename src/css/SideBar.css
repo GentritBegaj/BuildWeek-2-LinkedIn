@@ -8,6 +8,8 @@
 .links {
   border: 1px solid rgb(240, 231, 231);
   border-radius: 10px;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
 }
 
 .card {

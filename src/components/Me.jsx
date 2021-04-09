@@ -5,6 +5,7 @@ import Experience from "./Experience";
 import MeSidebar from "./MeSidebar";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import PersonalDashboard from "./PersonalDashboard";
+import AddProfilePictureModal from "./AddProfilePictureModal";
 
 export default class Me extends Component {
   state = {
@@ -12,6 +13,7 @@ export default class Me extends Component {
     userInfo: {},
     experiences: [],
     experience: {},
+    modalShow: false,
   };
 
   getUsers = async () => {
@@ -65,8 +67,7 @@ export default class Me extends Component {
   getUserExperiences = async (id) => {
     try {
       let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/606c195e6fd22800153fdbaf
-/experiences`,
+        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userInfo._id}/experiences`,
         {
           headers: {
             Authorization:
@@ -163,7 +164,6 @@ export default class Me extends Component {
   };
 
   addExperiencePhoto = async (experienceId, pic) => {
-    console.log("in add exp photo", experienceId, pic);
     let formData = new FormData();
     formData.append("experience", pic);
 
@@ -190,12 +190,6 @@ export default class Me extends Component {
     }
   };
 
-  // componentDidUpdate = (prevProps, prevState) => {
-  //   if (prevState.userInfo._id !== this.state.userInfo._id) {
-  //     this.getUserExperiences();
-  //   }
-  // };
-
   componentDidMount = () => {
     this.getUserInfo();
     this.getUsers();
@@ -217,6 +211,7 @@ export default class Me extends Component {
                       src={this.state.userInfo.image}
                       alt="profile-pic"
                       width="100px"
+                      onClick={() => this.setState({ modalShow: true })}
                     />
                   </div>
                 </div>
@@ -258,6 +253,13 @@ export default class Me extends Component {
                   </div>
                 </div>
               </div>
+
+              <AddProfilePictureModal
+                show={this.state.modalShow}
+                onHide={() => this.setState({ modalShow: false })}
+                getUserInfo={this.getUserInfo}
+                userInfo={this.state.userInfo}
+              />
 
               <div className="profile-strength-wrapper mt-3">
                 <div className="mb-3 profile-strength-header d-flex justify-content-between">
