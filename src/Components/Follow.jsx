@@ -6,8 +6,9 @@ import "../Follow.css";
 import InfoIcon from "@material-ui/icons/Info";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import Advertisement from "./Advertisement";
+import Contacts from "./Contacts";
 
-function Follow() {
+function Follow(props) {
   const RandomAvatarsBill =
     "https://pbs.twimg.com/profile_images/988775660163252226/XpgonN0X.jpg";
   const RandomAvatarsUni =
@@ -19,8 +20,8 @@ function Follow() {
       <Row>
         <Col>
           <div className="subtitle_feed">
-            <span>Add to your feed</span>
-            <InfoIcon style={{ boxSizing: 10 }} />
+            Add to your feed
+            <InfoIcon />
           </div>
           <RandonProfiles
             name="Bill Gates"
@@ -38,6 +39,7 @@ function Follow() {
             avatar={RandomAvatarRichard}
             description="Founder at Virgin"
           />
+
           <div className="footer_feed">
             <span>View all recommendations</span>
             <ArrowRightAltIcon />
@@ -51,7 +53,9 @@ function Follow() {
       </Row>
       <Row>
         <Col>
-          <Advertisement />
+          <div className="adv">
+            <Advertisement />
+          </div>
         </Col>
       </Row>
     </Container>

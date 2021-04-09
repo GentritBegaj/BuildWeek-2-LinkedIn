@@ -5,8 +5,10 @@
 }
 
 .post-wrapper {
+  contain: content;
   background-color: rgb(252, 249, 250);
-  padding: 10px;
+  text-overflow: clip;
+  padding: 20px;
   margin: 20px 0;
   border: 1px solid lightgrey;
   border-radius: 10px;
@@ -16,11 +18,18 @@
   display: flex;
 }
 
+.profilePic-wrapper:hover {
+  cursor: pointer;
+}
+
 .name-and-description-wrapper {
   margin-left: 10px;
 }
 .name-and-description-wrapper h5 {
   font-size: 16px;
+}
+.name-and-description-wrapper h5:hover {
+  cursor: pointer;
 }
 .name-and-description-wrapper p {
   font-size: 12px;
@@ -34,4 +43,14 @@
 
 .post-body {
   text-align: left;
+  contain: content;
+}
+@media only screen and (max-width: 767px) {
+  .reactions-wrapper {
+    margin: 10px;
+  }
+  .post-body {
+    width: 100%;
+    max-width: 50%;
+  }
 }

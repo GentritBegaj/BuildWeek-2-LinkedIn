@@ -3,11 +3,13 @@
   align-items: flex-start;
   justify-content: space-between;
   background-color: white;
-  border-bottom: 1px solid lightgray;
 }
 
+/* .experience-item:not(:last-child) {
+  border-bottom: 1px solid lightgray;
+} */
+
 .experience-item-text {
-  margin: 10px 0;
   text-align: left;
   line-height: 0.8;
 }

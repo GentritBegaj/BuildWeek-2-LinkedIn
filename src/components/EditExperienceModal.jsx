@@ -11,11 +11,21 @@ export default class EditExperienceModal extends Component {
       endDate: this.props.experience.endDate,
       description: this.props.experience.description,
     },
+    experienceId: this.props.id,
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.editUserExperience(this.state.experience);
+    this.props.editUserExperience(
+      this.state.experience,
+      this.state.experienceId
+    );
+    this.props.onHide();
+  };
+
+  handleDelete = (e) => {
+    e.preventDefault();
+    this.props.deleteUserExperience(this.state.experienceId);
   };
 
   handleInput = (e) => {
@@ -33,7 +43,7 @@ export default class EditExperienceModal extends Component {
         <Modal {...this.props}>
           <Form onSubmit={this.handleSubmit}>
             <Modal.Header>
-              <Modal.Title>Add experience</Modal.Title>
+              <Modal.Title>Edit or delete experience</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <Form.Group>
@@ -153,6 +163,13 @@ export default class EditExperienceModal extends Component {
                   />
                 </Form.Group>
               </Row>
+              <Button
+                variant="danger"
+                className="rounded-pill"
+                onClick={this.handleDelete}
+              >
+                Delete
+              </Button>
               <Button variant="primary" className="rounded-pill" type="submit">
                 Save
               </Button>

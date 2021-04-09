@@ -11,6 +11,7 @@ export default class AddExperienceModal extends Component {
       endDate: "",
       description: "",
     },
+    file: "",
   };
 
   handleInput = (e) => {
@@ -21,17 +22,21 @@ export default class AddExperienceModal extends Component {
         [id]: e.target.value,
       },
     });
-    console.log(this.state.experience);
+  };
+
+  handlePhotoInput = (e) => {
+    this.setState({ file: e.target.files[0] });
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.experience);
 
-    this.props.addExperience(this.state.experience);
+    this.props.addExperience(this.state.experience, this.state.file);
+    this.props.onHide();
   };
 
   render() {
+    console.log(this.state.file);
     return (
       <div>
         <Modal {...this.props}>
@@ -133,15 +138,15 @@ export default class AddExperienceModal extends Component {
                 presentations.
               </small>
               <Row className=" justify-content-around">
-                <Col>
-                  <Button variant="primary" className="w-100 rounded-pill">
-                    Upload
-                  </Button>
-                </Col>
-                <Col>
+                <Col className="d-flex justify-content-between">
+                  <input
+                    type="file"
+                    name="file"
+                    onChange={(e) => this.handlePhotoInput(e)}
+                  />
                   <Button
                     variant="outline-primary"
-                    className="w-100 rounded-pill"
+                    className="w-50 rounded-pill"
                   >
                     Link
                   </Button>
