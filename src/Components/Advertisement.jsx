@@ -5,7 +5,7 @@ import "../Advertisement.css";
 
 function Advertisement() {
   return (
-    <>
+    <div>
       <div className="add"></div>
       <Container>
         <Row>
@@ -144,7 +144,7 @@ function Advertisement() {
           </span>
         </Row>
       </Container>
-    </>
+    </div>
   );
 }
 

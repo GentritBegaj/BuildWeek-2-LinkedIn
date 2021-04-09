@@ -55,12 +55,12 @@ const Post = ({
         </div>
         <div className="post-body">
           <ShowMoreText
-            lines={1}
+            lines={3}
             more="Show more"
             less="Show less"
             onClick={executeOnClick}
             expanded={false}
-            width={1000}
+            width={500}
           >
             {postBody}
           </ShowMoreText>
