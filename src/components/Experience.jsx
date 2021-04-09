@@ -4,6 +4,7 @@ import ExperienceItem from "./ExperienceItem";
 import AddIcon from "@material-ui/icons/Add";
 import AddExperienceModal from "./AddExperienceModal";
 import { withRouter } from "react-router";
+import { Spinner } from "react-bootstrap";
 class Experience extends React.Component {
   state = {
     modalShow: false,
@@ -36,6 +37,13 @@ class Experience extends React.Component {
               />
             )}
           </div>
+          {this.props.experiences.length === 0 && (
+            <div className="d-flex justify-content-center align-items-center">
+              <Spinner animation="border" role="status">
+                <span className="sr-only">Loading...</span>
+              </Spinner>
+            </div>
+          )}
           {this.props.experiences.length > 0 &&
             this.props.experiences.map((experience) => (
               <>

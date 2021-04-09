@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Spinner } from "react-bootstrap";
 import CreatePost from "./CreatePost";
 import Post from "./Post";
 
@@ -21,6 +21,13 @@ export default class NewsFeed extends Component {
                 border: "1px solid lightgray",
               }}
             ></div>
+            {this.props.posts.length === 0 && (
+              <div className="d-flex justify-content-center align-items-center mt-5">
+                <Spinner animation="border" role="status">
+                  <span className="sr-only">Loading...</span>
+                </Spinner>
+              </div>
+            )}
             {this.props.posts.length > 0 &&
               this.props.posts
                 .slice(0, 10)

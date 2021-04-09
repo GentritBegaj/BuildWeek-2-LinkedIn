@@ -12,9 +12,11 @@ export default class HomePage extends Component {
     posts: [],
     userInfo: {},
     users: [],
+    isLoading: false,
   };
 
   getUsers = async () => {
+    this.setState({ isLoading: true });
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/profile/",

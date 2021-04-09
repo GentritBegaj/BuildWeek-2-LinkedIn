@@ -18,7 +18,7 @@ const SideBar = (props) => {
             </div>
             <div className="d-flex flex-column align-items-center text-center">
               <p>Welcome, {props.userInfo.name}!</p>
-              <a href="#">Add a photo</a>
+              <a href="#!">Add a photo</a>
             </div>
           </div>
           <div id="network" className="mx-2">
