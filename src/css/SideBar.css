@@ -80,11 +80,17 @@
 }
 
 .links {
+  list-style-type: none;
   background-color: white;
+  color: blue;
 }
 
 #bookmark {
   margin-right: 0;
+}
+
+.links li {
+  cursor: pointer;
 }
 
 .links > :first-child {

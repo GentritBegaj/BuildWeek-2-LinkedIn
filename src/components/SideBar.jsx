@@ -1,9 +1,6 @@
 import "../css/SideBar.css";
-import { Col, Row } from "react-bootstrap";
 import TurnedInIcon from "@material-ui/icons/TurnedIn";
-import StopIcon from "@material-ui/icons/Stop";
 import AddIcon from "@material-ui/icons/Add";
-import AddAPhotoOutlinedIcon from "@material-ui/icons/AddAPhotoOutlined";
 
 const SideBar = (props) => {
   return (
@@ -43,14 +40,14 @@ const SideBar = (props) => {
         </div>
         <div className="links">
           <div>
-            <a href="#">Groups</a>
+            <li>Groups</li>
             <div className="d-flex justify-content-between">
-              <a href="#">Events</a>
+              <li>Events</li>
               <span>
                 <AddIcon id="bookmark" className="mx-0" />
               </span>
             </div>
-            <a href="#">Followed Hashtags</a>
+            <li>Followed Hashtags</li>
           </div>
           <div>
             <p>Discover more</p>
