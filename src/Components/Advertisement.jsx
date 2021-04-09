@@ -5,7 +5,7 @@ import "../Advertisement.css";
 
 function Advertisement() {
   return (
-    <>
+    <div>
       <div className="add"></div>
       <Container>
         <Row>
@@ -142,7 +142,7 @@ function Advertisement() {
           <span className="copyright">LinkedIn Corporation © 2021</span>
         </Row>
       </Container>
-    </>
+    </div>
   );
 }
 
