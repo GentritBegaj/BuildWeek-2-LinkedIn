@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Me from "./components/Me";
 import Header from "./components/Header";
 import Profile from "./components/Profile";
+import Footer from "./components/Footer";
 
 class App extends React.Component {
   render() {
@@ -28,6 +29,7 @@ class App extends React.Component {
             render={(routerProps) => <Profile {...routerProps} />}
           />
         </Router>
+        <Footer />
       </>
     );
   }
