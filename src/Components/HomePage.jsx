@@ -80,7 +80,9 @@ export default class HomePage extends Component {
       if (response.ok) {
         const data = await response.json();
         this.addPictureToPost(data._id, pic);
-        this.getPosts();
+        setTimeout(() => {
+          this.getPosts();
+        }, 1000);
       } else {
         console.log("Error while adding post");
       }

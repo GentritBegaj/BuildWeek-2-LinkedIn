@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "../Header.css";
 import SearchIcon from "@material-ui/icons/Search";
@@ -13,6 +13,35 @@ import { Link } from "react-router-dom";
 import PersonIcon from "@material-ui/icons/Person";
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 function Header() {
+  const [userInfo, setUserInfo] = useState({});
+
+  const getUserInfo = async () => {
+    try {
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/me/`,
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMTk1ZTZmZDIyODAwMTUzZmRiYWYiLCJpYXQiOjE2MTc2OTcxMTksImV4cCI6MTYxODkwNjcxOX0.Cf16ByRhKv9VhM7o3j_Z2zkXHkrjpT88O9M26Cy9yN8",
+          },
+        }
+      );
+
+      if (response.ok) {
+        let data = await response.json();
+        setUserInfo(data);
+        console.log("USRINFOHEADER", userInfo);
+      } else {
+        console.log("Error while fetching profile");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getUserInfo();
+  }, []);
   return (
     <Container fluid className="main_header">
       <Row className="header">
@@ -37,7 +66,7 @@ function Header() {
             <HeaderOption Icon={NotificationsIcon} title="Notifications" />
             <div className="border-right">
               <Link to="/me">
-                <HeaderOption avatar={PersonOutlineIcon} title="Me" />
+                <HeaderOption avatar={userInfo.image} title="Me" />
               </Link>
             </div>
             <HeaderOption
