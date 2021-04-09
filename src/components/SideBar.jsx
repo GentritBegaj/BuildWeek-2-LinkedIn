@@ -14,7 +14,7 @@ const SideBar = (props) => {
           <div className="imageWrapper">
             <div id="cardTop"></div>
             <div id="idImage">
-              <img src={props.userInfo.image} alt="Profile Image" />
+              <img src={props.userInfo.image} alt="ProfileImage" />
             </div>
             <div className="d-flex flex-column align-items-center text-center">
               <p>Welcome, {props.userInfo.name}!</p>
@@ -29,9 +29,9 @@ const SideBar = (props) => {
             <p>Grow your network</p>
           </div>
           <div id="premium" className="mx-2">
-            <p>Access exclusive tools & insights</p>
-            <p>
-              <span id="premiumIcon"></span>
+            <p className="my-1">Access exclusive tools & insights</p>
+            <p className="my-1">
+              <span className="my-2" id="premiumIcon"></span>
               Reactivate Premium
             </p>
           </div>

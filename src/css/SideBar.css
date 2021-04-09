@@ -18,6 +18,7 @@
 
 .imageWrapper {
   position: relative;
+  display: inline;
   border-bottom: 2px solid rgb(240, 231, 231);
   line-height: 0.7;
 }
@@ -40,16 +41,20 @@
 
 #idImage {
   position: absolute;
-  top: 20px;
-  left: 10% !important;
-  transform: translateX(50%);
-  height: 80px;
-  width: 80px;
+  top: 10%;
+  left: 20%;
+  max-width: 50%;
   background-color: white;
   border: 1px solid rgb(240, 231, 231);
   border-radius: 50%;
   overflow: hidden;
 }
+
+/* @media screen and (max-width: 1000px) {
+  #idImage {
+    transform: translateX(40%);
+  }
+} */
 
 #idImage img {
   width: 100%;
@@ -59,11 +64,11 @@
 #network {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  line-height: 0.7;
+  line-height: 1;
 }
 
 #premium {
-  line-height: 0.7;
+  line-height: 1;
   padding: 1rem 0 1rem;
 }
 

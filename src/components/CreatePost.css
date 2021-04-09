@@ -21,7 +21,8 @@
     display: none;
   }
   .input-options-div {
-    display: none !important;
+    font-size: 0.7rem;
+    padding: 0 15px;
   }
   .input-div input {
     padding: 5px;
@@ -57,8 +58,15 @@
 .input-options-div {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  padding: 0 5px;
+  justify-content: space-between;
 }
+
+.photo-input-div {
+  min-height: 10px;
+  min-width: 10px;
+}
+
 .reactions-wrapper {
   display: flex;
 }
