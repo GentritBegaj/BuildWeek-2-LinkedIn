@@ -11,9 +11,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import ViewModuleIcon from "@material-ui/icons/ViewModule";
 import { Link } from "react-router-dom";
 import PersonIcon from "@material-ui/icons/Person";
-import DropDown from "./DropDown";
-const avatarUrl =
-  "https://image.freepik.com/vector-gratis/avatar-cabeza-perro-lindo_79416-67.jpg";
+import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 function Header() {
   return (
     <Container fluid className="main_header">
@@ -39,7 +37,7 @@ function Header() {
             <HeaderOption Icon={NotificationsIcon} title="Notifications" />
             <div className="border-right">
               <Link to="/me">
-                <HeaderOption avatar={avatarUrl} title="Me" />
+                <HeaderOption avatar={PersonOutlineIcon} title="Me" />
               </Link>
             </div>
             <HeaderOption
