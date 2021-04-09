@@ -5,8 +5,6 @@ import "./Contact.css";
 
 class Contact extends Component {
   render() {
-    // console.log("RRRRRRRRRRRRRRRRRRR", this.props);
-
     return (
       <Container fluid className="contact-wrapper">
         <Row>
@@ -22,7 +20,7 @@ class Contact extends Component {
           <div className="name-wrapper">
             <h6 className="p-0 m-1">{this.props.user.name}</h6>
             <p className="p-0 m-1" style={{ color: "gray" }}>
-              {this.props.user.title.slice(0, 30)}
+              {this.props.user.title && this.props.user.title.slice(0, 30)}
             </p>
             <div className="button-wrapper">
               <button

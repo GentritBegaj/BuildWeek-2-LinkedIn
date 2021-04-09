@@ -36,7 +36,6 @@ export default class AddExperienceModal extends Component {
   };
 
   render() {
-    console.log(this.state.file);
     return (
       <div>
         <Modal {...this.props}>

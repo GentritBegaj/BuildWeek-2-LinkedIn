@@ -29,8 +29,8 @@ export default class Me extends Component {
       );
       if (response.ok) {
         const data = await response.json();
-        this.setState({ users: data.slice(0, 10) });
-        console.log("UUUUUUUUUS", this.state.users);
+        // data = data.reverse();
+        this.setState({ users: data.slice(data.length - 50) });
       } else {
         console.log("Error while fetching users");
       }
@@ -54,7 +54,6 @@ export default class Me extends Component {
       if (response.ok) {
         let data = await response.json();
         this.setState({ userInfo: data });
-        console.log("USERINFO", this.state.userInfo);
         this.getUserExperiences(data._id);
       } else {
         console.log("Error while fetching profile");
@@ -104,7 +103,6 @@ export default class Me extends Component {
       );
       if (response.ok) {
         const data = await response.json();
-        console.log("RESPONSEEEEEEEEBODYYYYY", data);
 
         await this.addExperiencePhoto(data._id, pic);
 

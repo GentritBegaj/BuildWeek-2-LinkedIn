@@ -12,8 +12,6 @@ export default class AddProfilePictureModal extends Component {
 
   uploadProfilePic = async (e) => {
     e.preventDefault();
-    console.log(this.props.userInfo._id);
-    console.log(this.state.file);
     let formData = new FormData();
     formData.append("profile", this.state.file);
 
@@ -42,7 +40,6 @@ export default class AddProfilePictureModal extends Component {
   };
 
   render() {
-    console.log("PROOOPS", this.props);
     return (
       <Modal {...this.props}>
         <form onSubmit={this.uploadProfilePic}>

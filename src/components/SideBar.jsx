@@ -6,7 +6,6 @@ import AddIcon from "@material-ui/icons/Add";
 import AddAPhotoOutlinedIcon from "@material-ui/icons/AddAPhotoOutlined";
 
 const SideBar = (props) => {
-  console.log("My props", props);
   return (
     <>
       <div id="profileWrapper" className="flex-column align-items-center">

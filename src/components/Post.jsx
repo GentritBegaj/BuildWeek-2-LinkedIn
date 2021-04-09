@@ -85,7 +85,7 @@ const Post = ({
             </div>
           </div>
         </div>
-        <AddComment profilePic={profilePic} />
+        <AddComment userInfo={userInfo} />
       </div>
       <EditPostModal
         postId={postId}

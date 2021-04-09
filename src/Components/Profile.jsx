@@ -26,8 +26,7 @@ export default class Me extends Component {
       );
       if (response.ok) {
         const data = await response.json();
-        this.setState({ users: data.slice(0, 10) });
-        console.log("UUUUUUUUUS", this.state.users);
+        this.setState({ users: data.reverse().slice(40, 60) });
       } else {
         console.log("Error while fetching users");
       }
@@ -74,7 +73,6 @@ export default class Me extends Component {
       if (response.ok) {
         let data = await response.json();
         this.setState({ experiences: data });
-        console.log("EXPERIENCES", this.state.experiences);
       } else {
         console.log("Error while fetching experiences");
       }

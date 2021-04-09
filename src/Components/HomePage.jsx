@@ -30,7 +30,7 @@ export default class HomePage extends Component {
       );
       if (response.ok) {
         const data = await response.json();
-        this.setState({ users: data.slice(0, 10) });
+        this.setState({ users: data.reverse().slice(0, 20) });
       } else {
         console.log("Error while fetching users");
       }
@@ -80,9 +80,6 @@ export default class HomePage extends Component {
       if (response.ok) {
         const data = await response.json();
         this.addPictureToPost(data._id, pic);
-        setTimeout(() => {
-          this.getPosts();
-        }, 1000);
       } else {
         console.log("Error while adding post");
       }
@@ -105,7 +102,6 @@ export default class HomePage extends Component {
       if (response.ok) {
         const data = await response.json();
         this.setState({ posts: data.reverse() });
-        console.log("POSTS", this.state.posts);
       } else {
         console.log("Error while fetching posts");
       }
@@ -181,7 +177,7 @@ export default class HomePage extends Component {
       );
 
       if (response.ok) {
-        console.log("POST PICTURE ADDED");
+        this.getPosts();
       } else {
         console.log("ERROR WHILE ADDING POST PICTURE");
       }

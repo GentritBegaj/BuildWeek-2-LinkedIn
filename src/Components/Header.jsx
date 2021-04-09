@@ -30,7 +30,6 @@ function Header() {
       if (response.ok) {
         let data = await response.json();
         setUserInfo(data);
-        console.log("USRINFOHEADER", userInfo);
       } else {
         console.log("Error while fetching profile");
       }
