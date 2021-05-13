@@ -84,21 +84,22 @@ export default class Me extends Component {
   addExperience = async (experience, pic) => {
     try {
       const response = await fetch(
-        `${process.env.fetchUrl}/v1/users/${this.state.userInfo._id}/experiences`,
+        `https://linkedinnn.herokuapp.com/v1/users/${this.state.userInfo._id}/experiences`,
         {
           method: "POST",
           body: JSON.stringify(experience),
           headers: {
             "Content-Type": "application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDlkMDNmMTVjNGFmNDAwMTUzMTUxY2MiLCJpYXQiOjE2MjA5MDI4OTgsImV4cCI6MTYyMjExMjQ5OH0.LaW9QgH1-d_v2mreBcgLshLoZbV-hdHdFgK2MQwzZxU",
+            Authorization: "Bearer " + localStorage.getItem("token"),
           },
         }
       );
       if (response.ok) {
-        const data = await response.json();
+        if (pic) {
+          const data = await response.json();
 
-        await this.addExperiencePhoto(data._id, pic);
+          await this.addExperiencePhoto(data._id, pic);
+        }
 
         await this.getUserExperiences();
       } else {
@@ -118,8 +119,7 @@ export default class Me extends Component {
           body: JSON.stringify(experience),
           headers: {
             "Content-Type": "application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDlkMDNmMTVjNGFmNDAwMTUzMTUxY2MiLCJpYXQiOjE2MjA5MDI4OTgsImV4cCI6MTYyMjExMjQ5OH0.LaW9QgH1-d_v2mreBcgLshLoZbV-hdHdFgK2MQwzZxU",
+            Authorization: "Bearer " + localStorage.getItem("token"),
           },
         }
       );
