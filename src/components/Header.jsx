@@ -19,14 +19,14 @@ function Header() {
     try {
       let response = await fetch(`https://linkedinnn.herokuapp.com/users/me/`, {
         headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDlkMDNmMTVjNGFmNDAwMTUzMTUxY2MiLCJpYXQiOjE2MjA5MDI4OTgsImV4cCI6MTYyMjExMjQ5OH0.LaW9QgH1-d_v2mreBcgLshLoZbV-hdHdFgK2MQwzZxU",
+          Authorization: "Bearer " + localStorage.getItem("token"),
         },
       });
 
       if (response.ok) {
         let data = await response.json();
         setUserInfo(data);
+        console.log(data);
       } else {
         console.log("Error while fetching profile");
       }
@@ -54,11 +54,14 @@ function Header() {
           </div>
           <Link to="/me">
             <div id="small_icon">
-              <PersonIcon />
+              {console.log(userInfo.data)}
+              <img src={userInfo}></img>
             </div>
           </Link>
           <div className="header_right">
-            <HeaderOption Icon={HomeIcon} title="Home" />
+            <Link to="/">
+              <HeaderOption Icon={HomeIcon} title="Home" />
+            </Link>
             <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
             <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
             <HeaderOption Icon={ChatIcon} title="Messaging" />

@@ -10,7 +10,8 @@ import AddComment from "./AddComment";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import EditPostModal from "./EditPostModal";
 import { withRouter } from "react-router";
-
+import { ReactionBarSelector } from "@charkour/react-reactions";
+import { SlackSelector } from "@charkour/react-reactions";
 const Post = ({
   userInfo,
   postId,
@@ -30,8 +31,8 @@ const Post = ({
   const executeOnClick = () => {
     setExpanded(true);
   };
+  const [reactionsShow, setReactionsShow] = useState(false);
 
-  console.log(history);
   return (
     <>
       <div className="post-wrapper">
@@ -88,7 +89,57 @@ const Post = ({
         <div className="reactions-wrapper container-fluid my-2">
           <div className="row">
             <div className="col-3 ">
-              <InputOption Icon={ThumbUpAltIcon} title={"Like"} />
+              <div className="newdiv">
+                {reactionsShow && (
+                  <div className="sel">
+                    <ReactionBarSelector
+                      iconSize="20px"
+                      reactions={[
+                        {
+                          label: "like",
+                          node: (
+                            <img src="https://static-exp1.licdn.com/sc/h/36xg5gxpnrq56ebbj1wla5x2n" />
+                          ),
+                        },
+                        {
+                          label: "insightful",
+                          node: (
+                            <img src="https://static-exp1.licdn.com/sc/h/9wjxk9w5wguhpev3dm13672dq" />
+                          ),
+                        },
+                        {
+                          label: "celebrate",
+                          node: (
+                            <img src="https://static-exp1.licdn.com/sc/h/6xvr3hrj4c24dak8r7z64pgj3" />
+                          ),
+                        },
+                        {
+                          label: "love",
+                          node: (
+                            <img src="https://static-exp1.licdn.com/sc/h/7rghal44zenlhabcjrr4ow7gk" />
+                          ),
+                        },
+                        {
+                          label: "celebrate",
+                          node: (
+                            <img src="https://static-exp1.licdn.com/sc/h/1zk00q5n4o055s08tjpy4rswf" />
+                          ),
+                        },
+
+                        {
+                          label: "curious",
+                          node: (
+                            <img src="https://static-exp1.licdn.com/sc/h/3tn3hb1r3nls9c4ddwbg2pymr" />
+                          ),
+                        },
+                      ]}
+                    />
+                  </div>
+                )}
+                <div onClick={() => setReactionsShow(!reactionsShow)}>
+                  <InputOption Icon={ThumbUpAltIcon} title={"Like"} />
+                </div>
+              </div>
             </div>
             <div className="col-3 ">
               <InputOption Icon={ChatIcon} title={"Comnt"} />

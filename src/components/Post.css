@@ -45,6 +45,11 @@
   text-align: left;
   contain: content;
 }
+
+.sel {
+  position: absolute !important;
+  top: -70px;
+}
 @media only screen and (max-width: 767px) {
   .reactions-wrapper {
     margin: 10px;

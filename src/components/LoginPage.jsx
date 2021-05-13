@@ -11,7 +11,7 @@ export default class Login extends React.Component {
   notify = () => toast("Here is your toast.");
   logUser = async () => {
     try {
-      let response = await fetch(`https://linkedinnn.herokuapp.com/login`, {
+      let response = await fetch(`https://linkedinnn.herokuapp.com/v1/login`, {
         method: "POST",
         body: JSON.stringify(this.state),
         headers: {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button, Modal } from "react-bootstrap";
-
+import toast, { Toaster } from "react-hot-toast";
 export default class AddProfilePictureModal extends Component {
   state = {
     file: null,
@@ -28,11 +28,11 @@ export default class AddProfilePictureModal extends Component {
         }
       );
       if (response.ok) {
-        console.log("Profile pic added");
+        toast.success("Profile pic added");
         this.props.getUserInfo();
         this.props.onHide();
       } else {
-        console.log("Error while adding profile pic");
+        toast.error("Error while adding profile pic");
       }
     } catch (error) {
       console.log(error);
