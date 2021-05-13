@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button, Modal } from "react-bootstrap";
-
+import toast, { Toaster } from "react-hot-toast";
 export default class AddProfilePictureModal extends Component {
   state = {
     file: null,
@@ -13,26 +13,25 @@ export default class AddProfilePictureModal extends Component {
   uploadProfilePic = async (e) => {
     e.preventDefault();
     let formData = new FormData();
-    formData.append("profile", this.state.file);
+    formData.append("img", this.state.file);
 
     try {
       const response = await fetch(
-        `https://linkedinnn.herokuapp.com/users/${this.props.userInfo._id}/upload`,
+        `https://linkedinnn.herokuapp.com/v1/users/${this.props.userInfo._id}/upload`,
         {
           method: "PUT",
           body: formData,
           headers: {
-            "Content-Type": "application/json",
             Authorization: "Bearer " + localStorage.getItem("token"),
           },
         }
       );
       if (response.ok) {
-        console.log("Profile pic added");
+        toast.success("Profile pic added");
         this.props.getUserInfo();
         this.props.onHide();
       } else {
-        console.log("Error while adding profile pic");
+        toast.error("Error while adding profile pic");
       }
     } catch (error) {
       console.log(error);

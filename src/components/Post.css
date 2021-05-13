@@ -10,7 +10,7 @@
   text-overflow: clip;
   padding: 20px;
   margin: 20px 0;
-  border: 1px solid lightgrey;
+  border: 1px solid rgba(211, 211, 211, 0.452);
   border-radius: 10px;
 }
 
@@ -44,6 +44,11 @@
 .post-body {
   text-align: left;
   contain: content;
+}
+
+.sel {
+  position: absolute !important;
+  top: -70px;
 }
 @media only screen and (max-width: 767px) {
   .reactions-wrapper {

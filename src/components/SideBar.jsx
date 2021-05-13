@@ -2,6 +2,7 @@ import "../css/SideBar.css";
 import TurnedInIcon from "@material-ui/icons/TurnedIn";
 import AddIcon from "@material-ui/icons/Add";
 
+import { withRouter } from "react-router";
 const SideBar = (props) => {
   return (
     <>
@@ -10,7 +11,16 @@ const SideBar = (props) => {
           <div className="imageWrapper">
             <div id="cardTop"></div>
             <div id="idImage">
-              <img src={props.userInfo.image} alt="ProfileImage" />
+              {!props.userInfo.image ? (
+                <img src="https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"></img>
+              ) : (
+                <img
+                  draggable="false"
+                  src={props.userInfo.image}
+                  alt="profile-pic"
+                  onClick={() => props.history.push("/me")}
+                />
+              )}
             </div>
             <div className="d-flex flex-column align-items-center text-center">
               <p>Welcome, {props.userInfo.name}!</p>
@@ -57,4 +67,4 @@ const SideBar = (props) => {
     </>
   );
 };
-export default SideBar;
+export default withRouter(SideBar);

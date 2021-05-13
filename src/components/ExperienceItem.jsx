@@ -7,16 +7,8 @@ import { withRouter } from "react-router";
 
 const ExperienceItem = (props) => {
   const [modalShow, setModalShow] = useState(false);
-  const {
-    area,
-    company,
-    description,
-    endDate,
-    role,
-    startDate,
-    image,
-    _id,
-  } = props.experience;
+  const { area, company, description, endDate, role, startDate, image, _id } =
+    props.experience;
 
   return (
     <>
@@ -24,6 +16,7 @@ const ExperienceItem = (props) => {
         <div className="d-flex">
           <div className="experience-item-image">
             <img
+              draggable="false"
               src={
                 image
                   ? image

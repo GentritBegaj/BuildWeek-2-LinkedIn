@@ -15,13 +15,16 @@ export default class Register extends React.Component {
   notify = () => toast("Here is your toast.");
   logUser = async () => {
     try {
-      let response = await fetch(`https://linkedinnn.herokuapp.com/register`, {
-        method: "POST",
-        body: JSON.stringify(this.state),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      let response = await fetch(
+        `https://linkedinnn.herokuapp.com/v1/register`,
+        {
+          method: "POST",
+          body: JSON.stringify(this.state),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       if (response.ok) {
         const res = await response.json();
         const access_token = await res.access_token;

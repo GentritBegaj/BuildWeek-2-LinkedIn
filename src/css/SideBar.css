@@ -6,7 +6,7 @@
 
 .card,
 .links {
-  border: 1px solid rgb(240, 231, 231);
+  border: 1px solid rgba(211, 211, 211, 0.452);
   border-radius: 10px;
   border-top-left-radius: 10px !important;
   border-top-right-radius: 10px !important;
@@ -19,7 +19,7 @@
 .imageWrapper {
   position: relative;
   display: inline;
-  border-bottom: 2px solid rgb(240, 231, 231);
+  border-bottom: 2px solid rgba(211, 211, 211, 0.452);
   line-height: 0.7;
 }
 
@@ -42,12 +42,12 @@
 #idImage {
   position: absolute;
   top: 10%;
-  left: 23%;
+  left: 30%;
   max-width: 60%;
   max-height: 60%;
   border-radius: 50%;
   background-color: white;
-  border: 1px solid rgb(240, 231, 231);
+  border: 1px solid rgba(211, 211, 211, 0.452);
   overflow: hidden;
 }
 
@@ -96,7 +96,7 @@
 .links > :first-child {
   padding: 0 0.8rem 0 0.8rem;
   text-align: left;
-  border-bottom: 2px solid rgb(240, 231, 231);
+  border-bottom: 2px solid rgba(211, 211, 211, 0.452);
   margin-bottom: 3px;
 }
 .links > :last-child {

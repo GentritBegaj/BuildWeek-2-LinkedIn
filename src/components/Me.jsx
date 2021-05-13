@@ -39,7 +39,7 @@ export default class Me extends Component {
   getUserInfo = async () => {
     try {
       let response = await fetch(
-        `https://linkedinnn.herokuapp.com/v1/users/me/`,
+        `https://linkedinnn.herokuapp.com/v1/users/me`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -206,6 +206,7 @@ export default class Me extends Component {
                 <div className="header-image-wrapper">
                   <div className="profile-pic-wrapper">
                     <img
+                      draggable="false"
                       src={this.state.userInfo.image}
                       alt="profile-pic"
                       width="100px"

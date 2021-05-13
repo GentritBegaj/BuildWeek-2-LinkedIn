@@ -10,22 +10,26 @@ import ChatIcon from "@material-ui/icons/SmsRounded";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import ViewModuleIcon from "@material-ui/icons/ViewModule";
 import { Link } from "react-router-dom";
-import PersonIcon from "@material-ui/icons/Person";
+
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 function Header() {
   const [userInfo, setUserInfo] = useState({});
 
   const getUserInfo = async () => {
     try {
-      let response = await fetch(`https://linkedinnn.herokuapp.com/users/me/`, {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
+      let response = await fetch(
+        `https://linkedinnn.herokuapp.com/v1/users/me`,
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
 
       if (response.ok) {
         let data = await response.json();
         setUserInfo(data);
+        console.log(data);
       } else {
         console.log("Error while fetching profile");
       }
@@ -43,18 +47,24 @@ function Header() {
         <Col className="header_left">
           <div className="search">
             <Link to="/">
-              <img src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg" />
+              <img
+                draggable="false"
+                src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg"
+                alt="header-pic"
+              />
             </Link>
             <SearchIcon style={{ backgroundColor: "#eef3f8" }} />
             <input type="text" placeholder="Search" />
           </div>
           <Link to="/me">
             <div id="small_icon">
-              <PersonIcon />
+              <img src={userInfo} alt="user-pic" />
             </div>
           </Link>
           <div className="header_right">
-            <HeaderOption Icon={HomeIcon} title="Home" />
+            <Link to="/">
+              <HeaderOption Icon={HomeIcon} title="Home" />
+            </Link>
             <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
             <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
             <HeaderOption Icon={ChatIcon} title="Messaging" />
