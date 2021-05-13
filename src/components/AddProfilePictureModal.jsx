@@ -13,16 +13,15 @@ export default class AddProfilePictureModal extends Component {
   uploadProfilePic = async (e) => {
     e.preventDefault();
     let formData = new FormData();
-    formData.append("profile", this.state.file);
+    formData.append("img", this.state.file);
 
     try {
       const response = await fetch(
-        `https://linkedinnn.herokuapp.com/users/${this.props.userInfo._id}/upload`,
+        `https://linkedinnn.herokuapp.com/v1/users/${this.props.userInfo._id}/upload`,
         {
           method: "PUT",
           body: formData,
           headers: {
-            "Content-Type": "application/json",
             Authorization: "Bearer " + localStorage.getItem("token"),
           },
         }
