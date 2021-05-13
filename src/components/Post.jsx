@@ -9,6 +9,7 @@ import InputOption from "./InputOption";
 import AddComment from "./AddComment";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import EditPostModal from "./EditPostModal";
+import { withRouter } from "react-router";
 
 const Post = ({
   userInfo,
@@ -22,19 +23,27 @@ const Post = ({
   postImage,
   editPosts,
   deletePosts,
+  history,
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [modalShow, setModalShow] = useState(false);
   const executeOnClick = () => {
     setExpanded(true);
   };
+
+  console.log(history);
   return (
     <>
       <div className="post-wrapper">
         <div className="post-header-wrapper d-flex justify-content-between">
           <div className="d-flex justify-content-between">
             <div className="profilePic-wrapper">
-              <img src={profilePic} alt="profile-pic" width="50px" />
+              <img
+                src={profilePic}
+                alt="profile-pic"
+                width="50px"
+                onClick={() => history.push(`/user/${postUserId}`)}
+              />
             </div>
             <div className="name-and-description-wrapper">
               <h5>
@@ -99,4 +108,4 @@ const Post = ({
   );
 };
 
-export default Post;
+export default withRouter(Post);

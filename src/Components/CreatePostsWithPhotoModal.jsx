@@ -12,7 +12,9 @@ export default class CreatePostsWithPhotoModal extends Component {
         </Modal.Header>
         <Modal.Body>
           <div className="d-flex justify-content-center my-5 text-primary font-weight-normal">
-            <p>{this.props.file ? "Image chosen" : "Select image to share"}</p>
+            <p>
+              {this.props.file ? this.props.file.name : "Select image to share"}
+            </p>
           </div>
         </Modal.Body>
         <Modal.Footer>

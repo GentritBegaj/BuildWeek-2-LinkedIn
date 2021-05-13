@@ -17,15 +17,12 @@ function Header() {
 
   const getUserInfo = async () => {
     try {
-      let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/me/`,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZjMTk1ZTZmZDIyODAwMTUzZmRiYWYiLCJpYXQiOjE2MTc2OTcxMTksImV4cCI6MTYxODkwNjcxOX0.Cf16ByRhKv9VhM7o3j_Z2zkXHkrjpT88O9M26Cy9yN8",
-          },
-        }
-      );
+      let response = await fetch(`fetchUrl/users/me/`, {
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDlkMDNmMTVjNGFmNDAwMTUzMTUxY2MiLCJpYXQiOjE2MjA5MDI4OTgsImV4cCI6MTYyMjExMjQ5OH0.LaW9QgH1-d_v2mreBcgLshLoZbV-hdHdFgK2MQwzZxU",
+        },
+      });
 
       if (response.ok) {
         let data = await response.json();

@@ -1,13 +1,13 @@
-import React from "react";
-import HomePage from "./components/HomePage";
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { withRouter, Route } from "react-router-dom";
-import Me from "./components/Me";
-import Header from "./components/Header";
+import { Route, withRouter } from "react-router-dom";
+import NavBar from "./components/NavBar";
 import Profile from "./components/Profile";
-import Footer from "./components/Footer";
-import RegistrationPage from "../src/components/RegistrationPage";
-import LoginPage from "../src/components/LoginPage";
+import Registration from "./components/Registrationpage";
+import Login from "./components/LoginPage";
+import React from "react";
+import Feed from "./components/Feed";
+import NavSmall from "./components/NavSmall";
 
 class App extends React.Component {
   state = {
@@ -16,7 +16,7 @@ class App extends React.Component {
   };
   getActualUser = async () => {
     try {
-      let response = await fetch(`${process.env.fetchUrl}/v1/users/me`, {
+      let response = await fetch("http://localhost:5000/v1/users/me", {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
@@ -45,32 +45,25 @@ class App extends React.Component {
   componentDidMount() {
     this.getActualUser();
   }
-
   render() {
     return (
       <>
-        <div className="d-flex justify-content-center">
-          <Header
-          // userInfo={this.state.userInfo}
-          />
-        </div>
-        <Route
-          path="/"
-          exact
-          component={HomePage}
-          // userInfo={this.state.userInfo}
-        />
-        <Route path="/me" render={(routerProps) => <Me {...routerProps} />} />
-        <Route
-          path="/user/:id"
-          render={(routerProps) => <Profile {...routerProps} />}
-        />
+        <NavSmall />
+        <NavBar {...this.state.data} />
+        <Route path="/user/:id" render={(props) => <Profile {...props} />} />
 
+        <Route
+          exact
+          path="/"
+          render={(props) => (
+            <Feed {...props} state={this.state} fetch={this.getActualUser} />
+          )}
+        />
         <Route
           exact
           path="/register"
           render={(props) => (
-            <RegistrationPage
+            <Registration
               {...props}
               {...this.state}
               access={this.access}
@@ -82,7 +75,7 @@ class App extends React.Component {
         <Route
           exact
           path="/login"
-          render={(props) => <LoginPage access={this.access} {...props} />}
+          render={(props) => <Login access={this.access} {...props} />}
         />
       </>
     );

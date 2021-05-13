@@ -55,21 +55,17 @@ export default class CreatePost extends Component {
         </Row>
         <Row>
           <Col xs={12} className="input-options-div">
-            <label htmlFor="file" className="mt-2">
-              <InputOption
-                onClick={() => this.setState({ modalShow: true })}
-                Icon={ImageIcon}
-                title={"Photo"}
-                color="#7085F9"
+            <div onClick={() => this.setState({ modalShow: true })}>
+              <label htmlFor="file" className="mt-2">
+                <InputOption Icon={ImageIcon} title={"Photo"} color="#7085F9" />
+              </label>
+              <input
+                type="file"
+                id="file"
+                onChange={(e) => this.setState({ file: e.target.files[0] })}
+                style={{ display: "none" }}
               />
-            </label>
-            <input
-              type="file"
-              id="file"
-              onChange={(e) => this.setState({ file: e.target.files[0] })}
-              style={{ display: "none" }}
-            />
-
+            </div>
             <InputOption Icon={YouTubeIcon} title={"Video"} color="#E7A33E" />
             <InputOption Icon={DateRangeIcon} title={"Event"} color="#C0CBCD" />
             <InputOption

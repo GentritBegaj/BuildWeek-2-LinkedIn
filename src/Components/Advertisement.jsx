@@ -1,6 +1,5 @@
-import { Container } from "@material-ui/core";
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 import "../Advertisement.css";
 
 function Advertisement() {
