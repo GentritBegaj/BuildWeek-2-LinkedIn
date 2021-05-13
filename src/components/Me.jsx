@@ -39,7 +39,7 @@ export default class Me extends Component {
   getUserInfo = async () => {
     try {
       let response = await fetch(
-        `https://linkedinnn.herokuapp.com/v1/users/me/`,
+        `https://linkedinnn.herokuapp.com/v1/users/me`,
         {
           headers: {
             "Content-Type": "application/json",

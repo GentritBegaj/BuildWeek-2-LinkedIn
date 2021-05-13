@@ -18,7 +18,7 @@ const SideBar = (props) => {
                   draggable="false"
                   src={props.userInfo.image}
                   alt="profile-pic"
-                  onClick={() => props.history.push("/user/me")}
+                  onClick={() => props.history.push("/me")}
                 />
               )}
             </div>

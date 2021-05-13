@@ -10,18 +10,21 @@ import ChatIcon from "@material-ui/icons/SmsRounded";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import ViewModuleIcon from "@material-ui/icons/ViewModule";
 import { Link } from "react-router-dom";
-import PersonIcon from "@material-ui/icons/Person";
+
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 function Header() {
   const [userInfo, setUserInfo] = useState({});
 
   const getUserInfo = async () => {
     try {
-      let response = await fetch(`https://linkedinnn.herokuapp.com/users/me/`, {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
+      let response = await fetch(
+        `https://linkedinnn.herokuapp.com/v1/users/me`,
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
 
       if (response.ok) {
         let data = await response.json();
@@ -54,7 +57,6 @@ function Header() {
           </div>
           <Link to="/me">
             <div id="small_icon">
-              {console.log(userInfo.data)}
               <img src={userInfo}></img>
             </div>
           </Link>
