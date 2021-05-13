@@ -19,14 +19,11 @@ export default class HomePage extends Component {
   getUsers = async () => {
     this.setState({ isLoading: true });
     try {
-      let response = await fetch(
-        `${process.env.fetchUrl}/v1/users`,
-        {
-          headers: {
-           Authorization: "Bearer " + localStorage.getItem("token"),
-          },
-        }
-      );
+      let response = await fetch(`${process.env.fetchUrl}/v1/users`, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
       if (response.ok) {
         const data = await response.json();
         this.setState({ users: data.reverse().slice(0, 20) });
@@ -40,14 +37,11 @@ export default class HomePage extends Component {
 
   getUserInfo = async () => {
     try {
-      let response = await fetch(
-        `${process.env.fetchUrl}/v1/users/me`,
-        {
-          headers: {
-            Authorization:"Bearer " + localStorage.getItem("token"),
-          },
-        }
-      );
+      let response = await fetch(`${process.env.fetchUrl}/v1/users/me`, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
 
       if (response.ok) {
         let data = await response.json();
@@ -60,16 +54,16 @@ export default class HomePage extends Component {
     }
   };
 
-  addPosts = async (post, pic) => {
+  addPosts = async (post, pic, userId) => {
     try {
       const response = await fetch(
-        `${process.env.fetchUrl}/v1/users`/posts/",
+        `${process.env.fetchUrl}/v1/posts/${userId}`,
         {
           method: "POST",
           body: JSON.stringify(post),
           headers: {
             "Content-Type": "application/json",
-           Authorization: "Bearer " + localStorage.getItem("token"),
+            Authorization: "Bearer " + localStorage.getItem("token"),
           },
         }
       );
@@ -87,14 +81,11 @@ export default class HomePage extends Component {
 
   getPosts = async () => {
     try {
-      const response = await fetch(
-        `${process.env.fetchUrl}/v1/users`/posts/",
-        {
-          headers: {
-            Authorization: "Bearer " + localStorage.getItem("token"),
-          },
-        }
-      );
+      const response = await fetch(`${process.env.fetchUrl}/v1/posts/`, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
       if (response.ok) {
         const data = await response.json();
         this.setState({ posts: data.reverse() });
@@ -106,10 +97,10 @@ export default class HomePage extends Component {
     }
   };
 
-  editPosts = async (post, postId) => {
+  editPosts = async (post, postId, userId) => {
     try {
       const response = await fetch(
-        `${process.env.fetchUrl}/v1/users`/posts/" + postId,
+        `${process.env.fetchUrl}/v1/posts/${postId}/user/${userId}`,
         {
           method: "PUT",
           body: JSON.stringify(post),
@@ -131,10 +122,10 @@ export default class HomePage extends Component {
     }
   };
 
-  deletePosts = async (postId) => {
+  deletePosts = async (postId, userId) => {
     try {
       const response = await fetch(
-        `${process.env.fetchUrl}/v1/users`/posts/" + postId,
+        `${process.env.fetchUrl}/v1/posts/${postId}/user/${userId}`,
         {
           method: "DELETE",
           headers: {
@@ -154,12 +145,12 @@ export default class HomePage extends Component {
     }
   };
 
-  addPictureToPost = async (postId, pic) => {
+  addPictureToPost = async (postId, userId, pic) => {
     let formData = new FormData();
     formData.append("post", pic);
     try {
       const response = await fetch(
-        ``${process.env.fetchUrl}/v1/users`/posts/${postId}`,
+        `${process.env.fetchUrl}/v1/posts/${postId}/user/${userId}`,
         {
           method: "POST",
           body: formData,

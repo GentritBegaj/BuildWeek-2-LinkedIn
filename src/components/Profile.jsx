@@ -61,12 +61,9 @@ export default class Me extends Component {
   getUserExperiences = async () => {
     try {
       let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userId}/experiences`,
+        `${process.env.fetchUrl}/v1/users/${this.state.userId}/experiences`,
         {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDlkMDNmMTVjNGFmNDAwMTUzMTUxY2MiLCJpYXQiOjE2MjA5MDI4OTgsImV4cCI6MTYyMjExMjQ5OH0.LaW9QgH1-d_v2mreBcgLshLoZbV-hdHdFgK2MQwzZxU",
-          },
+          Authorization: "Bearer " + localStorage.getItem("token"),
         }
       );
 
