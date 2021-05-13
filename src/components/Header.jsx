@@ -17,7 +17,7 @@ function Header() {
 
   const getUserInfo = async () => {
     try {
-      let response = await fetch(`fetchUrl/users/me/`, {
+      let response = await fetch(`https://linkedinnn.herokuapp.com/users/me/`, {
         headers: {
           Authorization:
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDlkMDNmMTVjNGFmNDAwMTUzMTUxY2MiLCJpYXQiOjE2MjA5MDI4OTgsImV4cCI6MTYyMjExMjQ5OH0.LaW9QgH1-d_v2mreBcgLshLoZbV-hdHdFgK2MQwzZxU",

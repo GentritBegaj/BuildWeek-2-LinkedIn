@@ -17,7 +17,7 @@ export default class AddProfilePictureModal extends Component {
 
     try {
       const response = await fetch(
-        `${process.env.fetchUrl}/users/${this.props.userInfo._id}/upload`,
+        `https://linkedinnn.herokuapp.com/users/${this.props.userInfo._id}/upload`,
         {
           method: "PUT",
           body: formData,
