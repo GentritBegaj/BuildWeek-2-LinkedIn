@@ -36,12 +36,12 @@ export default class NewsFeed extends Component {
                     userInfo={this.props.userInfo}
                     key={post._id}
                     postId={post._id}
-                    name={post.user.name}
-                    surname={post.user.surname}
-                    postUserId={post.user._id}
-                    description={post.user.title}
+                    name={post.userId.name}
+                    surname={post.userId.surname}
+                    postUserId={post.userId._id}
+                    description={post.userId.title}
                     postBody={post.text}
-                    profilePic={post.user.image}
+                    profilePic={post.userId.image}
                     postImage={post.image}
                     editPosts={this.props.editPosts}
                     deletePosts={this.props.deletePosts}
