@@ -33,6 +33,7 @@ export default class NewsFeed extends Component {
                 .slice(0, 30)
                 .map((post) => (
                   <Post
+                    comments={post.comments}
                     userInfo={this.props.userInfo}
                     key={post._id}
                     postId={post._id}
@@ -42,7 +43,8 @@ export default class NewsFeed extends Component {
                     description={post.userId.title}
                     postBody={post.text}
                     profilePic={post.userId.image}
-                    postImage={post.image}
+                    postImage={post.img}
+                    getPosts={this.props.getPosts}
                     editPosts={this.props.editPosts}
                     deletePosts={this.props.deletePosts}
                   />

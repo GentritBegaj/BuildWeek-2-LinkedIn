@@ -27,7 +27,6 @@ class App extends React.Component {
       if (response.ok) {
         let myProfile = await response.json();
         this.setState({ data: myProfile });
-        console.log(this.state.data);
       }
     } catch (error) {
       console.log(error);

@@ -86,6 +86,8 @@ export default class Me extends Component {
 
   addExperience = async (experience, pic) => {
     try {
+      // const formData = new FormData();
+      // formData.append();
       const response = await fetch(
         `https://linkedinnn.herokuapp.com/v1/users/${this.state.userInfo._id}/experiences`,
         {
@@ -98,9 +100,9 @@ export default class Me extends Component {
         }
       );
       if (response.ok) {
-        if (pic) {
-          const data = await response.json();
-
+        const data = await response.json();
+        console.log(data);
+        if (pic.name !== "") {
           await this.addExperiencePhoto(data._id, pic);
         }
 
@@ -160,22 +162,23 @@ export default class Me extends Component {
 
   addExperiencePhoto = async (experienceId, pic) => {
     let formData = new FormData();
-    formData.append("experience", pic);
+    formData.append("image", pic);
 
     try {
       const response = await fetch(
-        `https://linkedinnn.herokuapp.com/v1/users/${this.state.userInfo._id}/experiences/${experienceId}/picture`,
+        `http://localhost:5000/v1/users/${this.state.userInfo._id}/upload/${experienceId}`,
         {
           method: "POST",
           body: formData,
           headers: {
-            "Content-Type": "application/json",
             Authorization: "Bearer " + localStorage.getItem("token"),
           },
         }
       );
-      console.log(response);
       if (response.ok) {
+        const data = await response.json();
+        console.log(response);
+        console.log(data, "AAAAAAAAAAAAAAAAAAAAAAAA");
         console.log("PICTURE ADDED");
       } else {
         console.log("ERROR WHILE ADDING PICTURE");

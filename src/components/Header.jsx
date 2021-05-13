@@ -19,8 +19,7 @@ function Header() {
     try {
       let response = await fetch(`https://linkedinnn.herokuapp.com/users/me/`, {
         headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDlkMDNmMTVjNGFmNDAwMTUzMTUxY2MiLCJpYXQiOjE2MjA5MDI4OTgsImV4cCI6MTYyMjExMjQ5OH0.LaW9QgH1-d_v2mreBcgLshLoZbV-hdHdFgK2MQwzZxU",
+          Authorization: "Bearer " + localStorage.getItem("token"),
         },
       });
 

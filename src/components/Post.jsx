@@ -24,6 +24,8 @@ const Post = ({
   editPosts,
   deletePosts,
   history,
+  comments,
+  getPosts,
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [modalShow, setModalShow] = useState(false);
@@ -31,7 +33,6 @@ const Post = ({
     setExpanded(true);
   };
 
-  console.log(history);
   return (
     <>
       <div className="post-wrapper">
@@ -94,7 +95,12 @@ const Post = ({
             </div>
           </div>
         </div>
-        <AddComment userInfo={userInfo} />
+        <AddComment
+          userInfo={userInfo}
+          postId={postId}
+          comments={comments}
+          getPosts={getPosts}
+        />
       </div>
       <EditPostModal
         postId={postId}

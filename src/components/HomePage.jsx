@@ -208,6 +208,7 @@ export default class HomePage extends Component {
                 <NewsFeed
                   userInfo={this.state.userInfo}
                   posts={this.state.posts}
+                  getPosts={this.getPosts}
                   addPosts={this.addPosts}
                   editPosts={this.editPosts}
                   deletePosts={this.deletePosts}
