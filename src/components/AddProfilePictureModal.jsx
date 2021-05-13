@@ -40,25 +40,43 @@ export default class AddProfilePictureModal extends Component {
 
   render() {
     return (
-      <Modal {...this.props}>
-        <form onSubmit={this.uploadProfilePic}>
-          <Modal.Header closeButton>
-            <Modal.Title className="text-center">
-              Change profile picture
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div className="d-flex justify-content-center">
-              <input type="file" onChange={(e) => this.handleInput(e)} />
-            </div>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="primary" type="submit">
-              Upload
-            </Button>
-          </Modal.Footer>
-        </form>
-      </Modal>
+      <>
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+          toastOptions={{
+            // Define default options
+            className: "",
+            style: {
+              margin: "40px",
+              background: "#363636",
+              color: "#fff",
+              zIndex: 1,
+            },
+            duration: 5000,
+            // Default options for specific types
+          }}
+        />
+        <Modal {...this.props}>
+          <form onSubmit={this.uploadProfilePic}>
+            <Modal.Header closeButton>
+              <Modal.Title className="text-center">
+                Change profile picture
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <div className="d-flex justify-content-center">
+                <input type="file" onChange={(e) => this.handleInput(e)} />
+              </div>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="primary" type="submit">
+                Upload
+              </Button>
+            </Modal.Footer>
+          </form>
+        </Modal>
+      </>
     );
   }
 }
