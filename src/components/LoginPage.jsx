@@ -11,7 +11,7 @@ export default class Login extends React.Component {
   notify = () => toast("Here is your toast.");
   logUser = async () => {
     try {
-      let response = await fetch(`fetchUrl/v1/login`, {
+      let response = await fetch(`${process.env.fetchUrl}/login`, {
         method: "POST",
         body: JSON.stringify(this.state),
         headers: {

@@ -15,7 +15,7 @@ export default class Register extends React.Component {
   notify = () => toast("Here is your toast.");
   logUser = async () => {
     try {
-      let response = await fetch(`fetchUrl/v1/register`, {
+      let response = await fetch(`${process.env.fetchUrl}/register`, {
         method: "POST",
         body: JSON.stringify(this.state),
         headers: {
