@@ -15,7 +15,7 @@ export default class Me extends Component {
 
   getUsers = async () => {
     try {
-      let response = await fetch(`${process.env.fetchUrl}/v1/users`, {
+      let response = await fetch(`https://linkedinnn.herokuapp.com/v1/users`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: "Bearer " + localStorage.getItem("token"),
@@ -35,7 +35,7 @@ export default class Me extends Component {
   getUserInfo = async () => {
     try {
       let response = await fetch(
-        `${process.env.fetchUrl}/v1/users/${this.state.userId}`,
+        `https://linkedinnn.herokuapp.com/v1/users/${this.state.userId}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -58,7 +58,7 @@ export default class Me extends Component {
   getUserExperiences = async () => {
     try {
       let response = await fetch(
-        `${process.env.fetchUrl}/v1/users/${this.state.userId}/experiences`,
+        `https://linkedinnn.herokuapp.com/v1/users/${this.state.userId}/experiences`,
         {
           headers: {
             "Content-Type": "application/json",

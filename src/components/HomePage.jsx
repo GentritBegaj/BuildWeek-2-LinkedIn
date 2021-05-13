@@ -19,14 +19,11 @@ export default class HomePage extends Component {
   getUsers = async () => {
     this.setState({ isLoading: true });
     try {
-      let response = await fetch(
-        `${process.env.fetchUrl}/v1/users`,
-        {
-          headers: {
-           Authorization: "Bearer " + localStorage.getItem("token"),
-          },
-        }
-      );
+      let response = await fetch(`https://linkedinnn.herokuapp.com/v1/users`, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
       if (response.ok) {
         const data = await response.json();
         this.setState({ users: data.reverse().slice(0, 20) });
@@ -41,10 +38,10 @@ export default class HomePage extends Component {
   getUserInfo = async () => {
     try {
       let response = await fetch(
-        `${process.env.fetchUrl}/v1/users/me`,
+        `https://linkedinnn.herokuapp.com/v1/users/me`,
         {
           headers: {
-            Authorization:"Bearer " + localStorage.getItem("token"),
+            Authorization: "Bearer " + localStorage.getItem("token"),
           },
         }
       );
@@ -63,13 +60,13 @@ export default class HomePage extends Component {
   addPosts = async (post, pic) => {
     try {
       const response = await fetch(
-        `${process.env.fetchUrl}/v1/users`/posts/",
+        `https://linkedinnn.herokuapp.com/v1/users/posts`,
         {
           method: "POST",
           body: JSON.stringify(post),
           headers: {
             "Content-Type": "application/json",
-           Authorization: "Bearer " + localStorage.getItem("token"),
+            Authorization: "Bearer " + localStorage.getItem("token"),
           },
         }
       );
@@ -88,7 +85,7 @@ export default class HomePage extends Component {
   getPosts = async () => {
     try {
       const response = await fetch(
-        `${process.env.fetchUrl}/v1/users`/posts/",
+        `https://linkedinnn.herokuapp.com/v1/users/posts/`,
         {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -109,7 +106,7 @@ export default class HomePage extends Component {
   editPosts = async (post, postId) => {
     try {
       const response = await fetch(
-        `${process.env.fetchUrl}/v1/users`/posts/" + postId,
+        `https://linkedinnn.herokuapp.com/v1/users/posts/` + postId,
         {
           method: "PUT",
           body: JSON.stringify(post),
@@ -134,7 +131,7 @@ export default class HomePage extends Component {
   deletePosts = async (postId) => {
     try {
       const response = await fetch(
-        `${process.env.fetchUrl}/v1/users`/posts/" + postId,
+        `https://linkedinnn.herokuapp.com/v1/users/posts/` + postId,
         {
           method: "DELETE",
           headers: {
@@ -159,7 +156,7 @@ export default class HomePage extends Component {
     formData.append("post", pic);
     try {
       const response = await fetch(
-        ``${process.env.fetchUrl}/v1/users`/posts/${postId}`,
+        `https://linkedinnn.herokuapp.com/v1/users/posts/${postId}`,
         {
           method: "POST",
           body: formData,
