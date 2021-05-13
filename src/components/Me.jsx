@@ -18,15 +18,12 @@ export default class Me extends Component {
 
   getUsers = async () => {
     try {
-      let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/",
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDlkMDNmMTVjNGFmNDAwMTUzMTUxY2MiLCJpYXQiOjE2MjA5MDI4OTgsImV4cCI6MTYyMjExMjQ5OH0.LaW9QgH1-d_v2mreBcgLshLoZbV-hdHdFgK2MQwzZxU",
-          },
-        }
-      );
+      let response = await fetch(`${process.env.fetchUrl}/v1/users`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
       if (response.ok) {
         const data = await response.json();
         // data = data.reverse();
@@ -41,15 +38,12 @@ export default class Me extends Component {
 
   getUserInfo = async () => {
     try {
-      let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/me/`,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDlkMDNmMTVjNGFmNDAwMTUzMTUxY2MiLCJpYXQiOjE2MjA5MDI4OTgsImV4cCI6MTYyMjExMjQ5OH0.LaW9QgH1-d_v2mreBcgLshLoZbV-hdHdFgK2MQwzZxU",
-          },
-        }
-      );
+      let response = await fetch(`${process.env.fetchUrl}/v1/users/me/`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
 
       if (response.ok) {
         let data = await response.json();
@@ -66,11 +60,11 @@ export default class Me extends Component {
   getUserExperiences = async (id) => {
     try {
       let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userInfo._id}/experiences`,
+        `${process.env.fetchUrl}/v1/users/${this.state.userInfo._id}/experiences`,
         {
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDlkMDNmMTVjNGFmNDAwMTUzMTUxY2MiLCJpYXQiOjE2MjA5MDI4OTgsImV4cCI6MTYyMjExMjQ5OH0.LaW9QgH1-d_v2mreBcgLshLoZbV-hdHdFgK2MQwzZxU",
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("token"),
           },
         }
       );
@@ -90,7 +84,7 @@ export default class Me extends Component {
   addExperience = async (experience, pic) => {
     try {
       const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userInfo._id}/experiences`,
+        `${process.env.fetchUrl}/v1/users/${this.state.userInfo._id}/experiences`,
         {
           method: "POST",
           body: JSON.stringify(experience),
@@ -118,7 +112,7 @@ export default class Me extends Component {
   editUserExperience = async (experience, experienceId) => {
     try {
       const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userInfo._id}/experiences/${experienceId}`,
+        `${process.env.fetchUrl}/v1/users/${this.state.userInfo._id}/experiences/${experienceId}`,
         {
           method: "PUT",
           body: JSON.stringify(experience),
@@ -142,12 +136,12 @@ export default class Me extends Component {
   deleteUserExperience = async (experienceId) => {
     try {
       const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userInfo._id}/experiences/${experienceId}`,
+        `${process.env.fetchUrl}/v1/users/${this.state.userInfo._id}/experiences/${experienceId}`,
         {
           method: "DELETE",
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDlkMDNmMTVjNGFmNDAwMTUzMTUxY2MiLCJpYXQiOjE2MjA5MDI4OTgsImV4cCI6MTYyMjExMjQ5OH0.LaW9QgH1-d_v2mreBcgLshLoZbV-hdHdFgK2MQwzZxU",
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("token"),
           },
         }
       );
@@ -167,13 +161,13 @@ export default class Me extends Component {
 
     try {
       const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userInfo._id}/experiences/${experienceId}/picture`,
+        `${process.env.fetchUrl}/v1/users/${this.state.userInfo._id}/experiences/${experienceId}/picture`,
         {
           method: "POST",
           body: formData,
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDlkMDNmMTVjNGFmNDAwMTUzMTUxY2MiLCJpYXQiOjE2MjA5MDI4OTgsImV4cCI6MTYyMjExMjQ5OH0.LaW9QgH1-d_v2mreBcgLshLoZbV-hdHdFgK2MQwzZxU",
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("token"),
           },
         }
       );
