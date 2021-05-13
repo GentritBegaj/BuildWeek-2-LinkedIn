@@ -8,7 +8,7 @@ import Login from "./components/LoginPage";
 import React from "react";
 import Feed from "./components/Feed";
 import NavSmall from "./components/NavSmall";
-require("dotenv").config();
+
 
 class App extends React.Component {
   state = {

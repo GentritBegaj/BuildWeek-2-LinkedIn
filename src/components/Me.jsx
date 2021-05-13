@@ -98,9 +98,11 @@ export default class Me extends Component {
         }
       );
       if (response.ok) {
-        const data = await response.json();
+        if (pic) {
+          const data = await response.json();
 
-        await this.addExperiencePhoto(data._id, pic);
+          await this.addExperiencePhoto(data._id, pic);
+        }
 
         await this.getUserExperiences();
       } else {

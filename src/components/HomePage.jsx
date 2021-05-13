@@ -57,10 +57,10 @@ export default class HomePage extends Component {
     }
   };
 
-  addPosts = async (post, pic) => {
+  addPosts = async (post, pic, userId) => {
     try {
       const response = await fetch(
-        `https://linkedinnn.herokuapp.com/v1/users/posts`,
+        `https://linkedinnn.herokuapp.com/v1/posts/${userId}`,
         {
           method: "POST",
           body: JSON.stringify(post),
@@ -85,7 +85,7 @@ export default class HomePage extends Component {
   getPosts = async () => {
     try {
       const response = await fetch(
-        `https://linkedinnn.herokuapp.com/v1/users/posts/`,
+        `https://linkedinnn.herokuapp.com/v1/posts/`,
         {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -103,10 +103,10 @@ export default class HomePage extends Component {
     }
   };
 
-  editPosts = async (post, postId) => {
+  editPosts = async (post, postId, userId) => {
     try {
       const response = await fetch(
-        `https://linkedinnn.herokuapp.com/v1/users/posts/` + postId,
+        `https://linkedinnn.herokuapp.com/v1/posts/${postId}/user/${userId}`,
         {
           method: "PUT",
           body: JSON.stringify(post),
@@ -128,10 +128,10 @@ export default class HomePage extends Component {
     }
   };
 
-  deletePosts = async (postId) => {
+  deletePosts = async (postId, userId) => {
     try {
       const response = await fetch(
-        `https://linkedinnn.herokuapp.com/v1/users/posts/` + postId,
+        `https://linkedinnn.herokuapp.com/v1/posts/${postId}/user/${userId}`,
         {
           method: "DELETE",
           headers: {
@@ -151,12 +151,12 @@ export default class HomePage extends Component {
     }
   };
 
-  addPictureToPost = async (postId, pic) => {
+  addPictureToPost = async (postId, userId, pic) => {
     let formData = new FormData();
     formData.append("post", pic);
     try {
       const response = await fetch(
-        `https://linkedinnn.herokuapp.com/v1/users/posts/${postId}`,
+        `https://linkedinnn.herokuapp.com/v1/posts/${postId}/user/${userId}`,
         {
           method: "POST",
           body: formData,
