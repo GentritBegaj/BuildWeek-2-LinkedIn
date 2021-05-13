@@ -28,7 +28,15 @@ export default class CreatePost extends Component {
       <Container className="start-post-wrapper">
         <Row>
           <Col xs={12} lg={2} className="picture-div">
-            <img src={this.props.userInfo.image} alt="profile-pic" />
+            {!this.props.userInfo.image ? (
+              <img src="https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"></img>
+            ) : (
+              <img
+                draggable="false"
+                src={this.props.userInfo.image}
+                alt="profile-pic"
+              />
+            )}
           </Col>
           <Col xs={12} lg={10} className="input-div">
             <form onSubmit={this.handleSubmit}>

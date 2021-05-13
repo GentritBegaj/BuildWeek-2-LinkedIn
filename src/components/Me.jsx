@@ -203,6 +203,7 @@ export default class Me extends Component {
                 <div className="header-image-wrapper">
                   <div className="profile-pic-wrapper">
                     <img
+                      draggable="false"
                       src={this.state.userInfo.image}
                       alt="profile-pic"
                       width="100px"

@@ -39,17 +39,22 @@ const Post = ({
           <div className="d-flex justify-content-between">
             <div className="profilePic-wrapper">
               <img
+                draggable="false"
                 src={profilePic}
                 alt="profile-pic"
-                width="50px"
+                style={{ borderRadius: "50%" }}
+                height="55"
+                width="55"
                 onClick={() => history.push(`/user/${postUserId}`)}
               />
             </div>
             <div className="name-and-description-wrapper">
               <h5>
-                {name} {surname}
+                <strong>
+                  {name} {surname}
+                </strong>
               </h5>
-              <p>{description}</p>
+              <p style={{ marginTop: "-7px" }}>{description}</p>
             </div>
           </div>
           <div>
@@ -75,7 +80,9 @@ const Post = ({
           </ShowMoreText>
         </div>
         <div className="postImage-wrapper">
-          <img src={postImage} alt="post-img" />
+          {postImage && (
+            <img draggable="false" src={postImage} alt="post-img" />
+          )}
         </div>
         <div class="reactions-numerator"></div>
         <div className="reactions-wrapper container-fluid my-2">

@@ -134,6 +134,7 @@ function Advertisement() {
         </Row>
         <Row style={{ alignItems: "center" }} className="ml-5">
           <img
+            draggable="false"
             className="img_footer_home"
             src="https://www.vectorlogo.zone/logos/linkedin/linkedin-ar21.svg"
             alt=""

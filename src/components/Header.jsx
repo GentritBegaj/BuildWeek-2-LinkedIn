@@ -44,7 +44,10 @@ function Header() {
         <Col className="header_left">
           <div className="search">
             <Link to="/">
-              <img src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg" />
+              <img
+                draggable="false"
+                src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg"
+              />
             </Link>
             <SearchIcon style={{ backgroundColor: "#eef3f8" }} />
             <input type="text" placeholder="Search" />

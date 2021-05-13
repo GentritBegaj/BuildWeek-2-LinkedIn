@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
 import CreatePost from "./CreatePost";
 import Post from "./Post";
-
+import ContentLoader, { Facebook } from "react-content-loader";
 export default class NewsFeed extends Component {
+  MyFacebookLoader = () => <Facebook />;
   render() {
     return (
       <Container>
@@ -18,14 +19,31 @@ export default class NewsFeed extends Component {
               style={{
                 width: "90%",
                 height: "0",
-                border: "1px solid lightgray",
+                border: "1px solid rgba(211, 211, 211, 0.452)",
               }}
             ></div>
             {this.props.posts.length === 0 && (
               <div className="d-flex justify-content-center">
-                <Spinner animation="border" role="status">
+                <Container>
+                  <div style={{ marginTop: "50px", marginBottom: "50px" }}>
+                    {this.MyFacebookLoader()}
+                  </div>
+                  <div style={{ marginBottom: "50px" }}>
+                    {this.MyFacebookLoader()}
+                  </div>
+                  <div style={{ marginBottom: "50px" }}>
+                    {this.MyFacebookLoader()}
+                  </div>
+                  <div style={{ marginBottom: "50px" }}>
+                    {this.MyFacebookLoader()}
+                  </div>
+                  <div style={{ marginBottom: "50px" }}>
+                    {this.MyFacebookLoader()}
+                  </div>
+                </Container>
+                {/* <Spinner animation="border" role="status">
                   <span className="sr-only">Loading...</span>
-                </Spinner>
+                </Spinner> */}
               </div>
             )}
             {this.props.posts.length > 0 &&
@@ -42,7 +60,7 @@ export default class NewsFeed extends Component {
                     description={post.userId.title}
                     postBody={post.text}
                     profilePic={post.userId.image}
-                    postImage={post.image}
+                    postImage={post.img}
                     editPosts={this.props.editPosts}
                     deletePosts={this.props.deletePosts}
                   />

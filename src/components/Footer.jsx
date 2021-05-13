@@ -8,6 +8,7 @@ function Footer() {
     <Container style={{ lineHeight: 2.5 }}>
       <Row>
         <img
+          draggable="false"
           className="img_footer"
           src="https://www.vectorlogo.zone/logos/linkedin/linkedin-ar21.svg"
           alt=""

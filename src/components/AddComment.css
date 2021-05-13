@@ -8,11 +8,6 @@
   margin-top: 10px 0;
   display: flex;
 }
-.add-comment-wrapper img {
-  width: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-}
 
 .add-comment-wrapper form {
   display: flex;
@@ -21,7 +16,7 @@
 
 .add-comment-wrapper input {
   flex: 1;
-  border: 2px solid lightgray;
+  border: 2px solid rgba(211, 211, 211, 0.452);
   outline-width: 0;
   border-radius: 25px;
   margin-left: 10px;
