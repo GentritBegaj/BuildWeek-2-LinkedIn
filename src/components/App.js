@@ -16,11 +16,14 @@ class App extends React.Component {
   };
   getActualUser = async () => {
     try {
-      let response = await fetch("http://localhost:5000/v1/users/me", {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
+      let response = await fetch(
+        "https://linkedinnn.herokuapp.com/v1/users/me",
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
       if (response.ok) {
         let myProfile = await response.json();
         this.setState({ data: myProfile });
