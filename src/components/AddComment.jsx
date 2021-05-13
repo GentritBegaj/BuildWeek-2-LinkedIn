@@ -54,7 +54,14 @@ const AddComment = ({ userInfo, postId, comments, getPosts }) => {
     <>
       <form onSubmit={postComment}>
         <div className="add-comment-wrapper">
-          <img src={userInfo.image} alt="profile-pic" />
+          <img
+            style={{ borderRadius: "50%" }}
+            height="45"
+            width="45"
+            draggable="false"
+            src={userInfo.image}
+            alt="profile-pic"
+          />
 
           <input
             type="text"
