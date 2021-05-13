@@ -166,7 +166,7 @@ export default class Me extends Component {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/v1/users/${this.state.userInfo._id}/upload/${experienceId}`,
+        `https://linkedinnn.herokuapp.com/v1/users/${this.state.userInfo._id}/upload/${experienceId}`,
         {
           method: "POST",
           body: formData,
