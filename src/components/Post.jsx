@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import "./Post.css";
 import ShowMoreText from "react-show-more-text";
-import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
-import ChatIcon from "@material-ui/icons/Chat";
-import ShareIcon from "@material-ui/icons/Share";
-import SendIcon from "@material-ui/icons/Send";
 import InputOption from "./InputOption";
 import AddComment from "./AddComment";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
@@ -32,14 +28,11 @@ const Post = ({
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [modalShow, setModalShow] = useState(false);
+  const [commentsShow, setCommentsShow] = useState(false);
   const executeOnClick = () => {
     setExpanded(true);
   };
   const [reactionsShow, setReactionsShow] = useState(false);
-
-  const logConsole = () => {
-    console.log("AAAAAAAAAAA");
-  };
 
   return (
     <>
@@ -113,7 +106,6 @@ const Post = ({
                           node: (
                             <img
                               src="https://static-exp1.licdn.com/sc/h/36xg5gxpnrq56ebbj1wla5x2n"
-                              onClick={() => logConsole}
                               alt="like-icon"
                             />
                           ),
@@ -168,7 +160,10 @@ const Post = ({
                     />
                   </div>
                 )}
-                <div onClick={() => setReactionsShow(!reactionsShow)}>
+                <div
+                  onClick={() => setReactionsShow(!reactionsShow)}
+                  style={{ cursor: "pointer" }}
+                >
                   <img
                     height="20"
                     src="https://media.discordapp.net/attachments/841212509343580162/842580036922245180/icons8-facebook-like-64.png"
@@ -177,35 +172,42 @@ const Post = ({
                 </div>
               </div>
             </div>
-            <div className="col-3 ">
+            <div
+              className="col-3"
+              onClick={() => setCommentsShow(!commentsShow)}
+              style={{ cursor: "pointer" }}
+            >
               <img
                 height="20"
-                src="https://media.discordapp.net/attachments/841212509343580162/842580604624961546/icons8-topic.gif"
+                src="https://cdn.discordapp.com/attachments/819321346629566514/842693332139638784/icons8-chat-message-100.png"
+                alt="likeico"
+              />
+            </div>
+            <div className="col-3 " style={{ cursor: "pointer" }}>
+              <img
+                height="20"
+                src="https://cdn.discordapp.com/attachments/819321346629566514/842693345644904448/icons8-share-80.png"
                 alt="likeico"
               />
             </div>
             <div className="col-3 ">
               <img
                 height="20"
-                src="https://media.discordapp.net/attachments/841212509343580162/842581087586222090/icons8-connect.gif"
+                src="https://cdn.discordapp.com/attachments/819321346629566514/842693369247563796/icons8-email-send-80.png"
                 alt="likeico"
-              />
-            </div>
-            <div className="col-3 ">
-              <img
-                height="20"
-                src="https://media.discordapp.net/attachments/841212509343580162/842581546057203762/icons8-chat-message.gif"
-                alt="likeico"
+                style={{ cursor: "pointer" }}
               />
             </div>
           </div>
         </div>
-        <AddComment
-          userInfo={userInfo}
-          postId={postId}
-          comments={comments}
-          getPosts={getPosts}
-        />
+        {commentsShow && (
+          <AddComment
+            userInfo={userInfo}
+            postId={postId}
+            comments={comments}
+            getPosts={getPosts}
+          />
+        )}
       </div>
       <EditPostModal
         postId={postId}
