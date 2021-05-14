@@ -23,7 +23,7 @@ export default class Me extends Component {
       });
       if (response.ok) {
         const data = await response.json();
-        this.setState({ users: data.reverse().slice(40, 60) });
+        this.setState({ users: data.slice(data.length - 50) });
       } else {
         console.log("Error while fetching users");
       }
