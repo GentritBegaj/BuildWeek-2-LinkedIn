@@ -39,7 +39,7 @@ class App extends React.Component {
     }
   };
   access = () => {
-    this.props.history.push("/");
+    this.props.history.push("/feed");
   };
   updateState = (subState) => {
     this.setState({ data: subState });
@@ -51,13 +51,16 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <div className="d-flex justify-content-center">
-          <Header
-          // userInfo={this.state.userInfo}
-          />
-        </div>
+        {console.log(this.props.history)}
+        {this.props.history.location.pathname !== ("/" && "/register") && (
+          <div className="d-flex justify-content-center">
+            <Header
+            // userInfo={this.state.userInfo}
+            />
+          </div>
+        )}
         <Route
-          path="/"
+          path="/feed"
           exact
           component={HomePage}
           // userInfo={this.state.userInfo}
@@ -83,7 +86,7 @@ class App extends React.Component {
         />
         <Route
           exact
-          path="/login"
+          path="/"
           render={(props) => <LoginPage access={this.access} {...props} />}
         />
       </>

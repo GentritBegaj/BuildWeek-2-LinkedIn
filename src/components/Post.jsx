@@ -14,7 +14,8 @@ import { ReactionBarSelector } from "@charkour/react-reactions";
 import { SlackSelector } from "@charkour/react-reactions";
 import Moment from "react-moment";
 const Post = ({
-  updatedAt,
+  post,
+  createdAt,
   userInfo,
   postId,
   name,
@@ -32,11 +33,33 @@ const Post = ({
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [modalShow, setModalShow] = useState(false);
+
   const executeOnClick = () => {
     setExpanded(true);
   };
   const [reactionsShow, setReactionsShow] = useState(false);
-
+  const postLike = async (e) => {
+    const reaction = e;
+    try {
+      const res = await fetch(
+        `http://localhost:5000/v1/posts/${postId}/user/${userInfo._id}/${reaction}`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
+      setReactionsShow(!reactionsShow);
+      if (res.ok) {
+        await getPosts();
+      } else {
+        console.log("error while doing");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <div className="post-wrapper">
@@ -63,7 +86,7 @@ const Post = ({
               <p style={{ marginTop: "-7px" }}>{description}</p>
 
               <Moment className="momentpos" fromNow>
-                {updatedAt}
+                {createdAt}
               </Moment>
             </div>
           </div>
@@ -94,6 +117,56 @@ const Post = ({
             <img draggable="false" src={postImage} alt="post-img" />
           )}
         </div>
+        <div className="likes-wrapper" style={{ display: "flex" }}>
+          <div>
+            {post.likes && post.likes.length > 0 && (
+              <img
+                src="https://static-exp1.licdn.com/sc/h/36xg5gxpnrq56ebbj1wla5x2n"
+                alt="like"
+              />
+            )}
+          </div>
+          <div>
+            {post.celebrates && post.celebrates.length > 0 && (
+              <img
+                src="https://static-exp1.licdn.com/sc/h/1zk00q5n4o055s08tjpy4rswf"
+                alt="celebrate"
+              />
+            )}
+          </div>
+          <div>
+            {post.supports && post.supports.length > 0 && (
+              <img
+                src="https://static-exp1.licdn.com/sc/h/6xvr3hrj4c24dak8r7z64pgj3"
+                alt="support"
+              />
+            )}
+          </div>
+          <div>
+            {post.loves && post.loves.length > 0 && (
+              <img
+                src="https://static-exp1.licdn.com/sc/h/7rghal44zenlhabcjrr4ow7gk"
+                alt="love"
+              />
+            )}
+          </div>
+          <div>
+            {post.insightfuls && post.insightfuls.length > 0 && (
+              <img
+                src="https://static-exp1.licdn.com/sc/h/9wjxk9w5wguhpev3dm13672dq"
+                alt="inisghtful"
+              />
+            )}
+          </div>
+          <div>
+            {post.curiouss && post.curiouss.length > 0 && (
+              <img
+                src="https://static-exp1.licdn.com/sc/h/3tn3hb1r3nls9c4ddwbg2pymr"
+                alt="curious"
+              />
+            )}
+          </div>
+        </div>
         <div class="reactions-numerator"></div>
         <div className="reactions-wrapper container-fluid my-2">
           <div className="row">
@@ -106,18 +179,19 @@ const Post = ({
                       reactions={[
                         {
                           label: "like",
+
                           node: (
                             <img src="https://static-exp1.licdn.com/sc/h/36xg5gxpnrq56ebbj1wla5x2n" />
                           ),
                         },
                         {
-                          label: "insightful",
+                          label: "celebrate",
                           node: (
-                            <img src="https://static-exp1.licdn.com/sc/h/9wjxk9w5wguhpev3dm13672dq" />
+                            <img src="https://static-exp1.licdn.com/sc/h/1zk00q5n4o055s08tjpy4rswf" />
                           ),
                         },
                         {
-                          label: "celebrate",
+                          label: "support",
                           node: (
                             <img src="https://static-exp1.licdn.com/sc/h/6xvr3hrj4c24dak8r7z64pgj3" />
                           ),
@@ -129,9 +203,9 @@ const Post = ({
                           ),
                         },
                         {
-                          label: "celebrate",
+                          label: "insightful",
                           node: (
-                            <img src="https://static-exp1.licdn.com/sc/h/1zk00q5n4o055s08tjpy4rswf" />
+                            <img src="https://static-exp1.licdn.com/sc/h/9wjxk9w5wguhpev3dm13672dq" />
                           ),
                         },
 
@@ -142,15 +216,43 @@ const Post = ({
                           ),
                         },
                       ]}
+                      onSelect={postLike}
                     />
                   </div>
                 )}
                 <div onClick={() => setReactionsShow(!reactionsShow)}>
-                  <img
-                    height="20"
-                    src="https://media.discordapp.net/attachments/841212509343580162/842580036922245180/icons8-facebook-like-64.png"
-                    alt="likeico"
-                  />
+                  {(() => {
+                    if (
+                      post.likes &&
+                      post.curiouss &&
+                      post.insightfuls &&
+                      post.celebrates &&
+                      post.loves &&
+                      post.supports &&
+                      !post.likes.includes(userInfo._id) &&
+                      !post.curiouss.includes(userInfo._id) &&
+                      !post.celebrates.includes(userInfo._id) &&
+                      !post.insightfuls.includes(userInfo._id) &&
+                      !post.loves.includes(userInfo._id) &&
+                      !post.supports.includes(userInfo._id)
+                    ) {
+                      return (
+                        <img
+                          height="20"
+                          src="https://media.discordapp.net/attachments/841212509343580162/842580036922245180/icons8-facebook-like-64.png"
+                          alt="likeico"
+                        />
+                      );
+                    } else {
+                      return (
+                        <img
+                          height="20"
+                          src="https://media.discordapp.net/attachments/819321346629566514/842714258127323146/icons8-facebook-like-64_1.png"
+                          alt="likeico"
+                        />
+                      );
+                    }
+                  })()}
                 </div>
               </div>
             </div>
