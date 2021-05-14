@@ -51,13 +51,12 @@ class App extends React.Component {
   render() {
     return (
       <>
-        {this.props.history.location.pathname !== "/" && (
-          <div className="d-flex justify-content-center">
-            <Header
-            // userInfo={this.state.userInfo}
-            />
-          </div>
-        )}
+        {this.props.history.location.pathname !== "/" &&
+          this.props.history.location.pathname !== "/register" && (
+            <div className="d-flex justify-content-center">
+              <Header userInfo={this.state.userInfo} />
+            </div>
+          )}
         <Route
           path="/feed"
           exact
