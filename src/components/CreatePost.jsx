@@ -19,7 +19,11 @@ export default class CreatePost extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addPosts(this.state.postObj, this.state.file);
+    this.props.addPosts(
+      this.state.postObj,
+      this.state.file,
+      this.props.userInfo._id
+    );
     this.setState({ postObj: { text: "" } });
   };
 
