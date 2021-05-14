@@ -147,7 +147,8 @@ const Post = ({
                 )}
                 <div onClick={() => setReactionsShow(!reactionsShow)}>
                   <img
-                    height="20"
+                    style={{ marginRight: "20px" }}
+                    height="30"
                     src="https://media.discordapp.net/attachments/841212509343580162/842580036922245180/icons8-facebook-like-64.png"
                     alt="likeico"
                   />
@@ -156,21 +157,24 @@ const Post = ({
             </div>
             <div className="col-3 ">
               <img
-                height="20"
+                style={{ marginRight: "20px" }}
+                height="30"
                 src="https://media.discordapp.net/attachments/841212509343580162/842580604624961546/icons8-topic.gif"
                 alt="likeico"
               />
             </div>
             <div className="col-3 ">
               <img
-                height="20"
+                style={{ marginRight: "20px" }}
+                height="30"
                 src="https://media.discordapp.net/attachments/841212509343580162/842581087586222090/icons8-connect.gif"
                 alt="likeico"
               />
             </div>
             <div className="col-3 ">
               <img
-                height="20"
+                style={{ marginRight: "20px" }}
+                height="30"
                 src="https://media.discordapp.net/attachments/841212509343580162/842581546057203762/icons8-chat-message.gif"
                 alt="likeico"
               />
