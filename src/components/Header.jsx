@@ -81,7 +81,6 @@ function Header() {
               Icon={ViewModuleIcon}
               title="Work"
             />
-            <HeaderOption title="Try Premium Free for 1 Month" />
           </div>
         </Col>
       </Row>
