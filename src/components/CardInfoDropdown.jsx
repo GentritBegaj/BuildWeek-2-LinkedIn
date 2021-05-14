@@ -16,7 +16,7 @@ export default function CardInfoDropdown(props) {
               {props.userInfo.name + " " + props.userInfo.surname}
             </div>
           </Card.Title>
-          <Card.Text>{props.userInfo.bio}</Card.Text>
+          <Card.Text className="text-truncate" style={{maxWidth: "150px"}}>{props.userInfo.bio}</Card.Text>
           <div className="text-center">
             <Button className="viewprofile_button_contact" variant="primary">
               <Link to="/me" className="button_link text-muted">View Profile</Link>
