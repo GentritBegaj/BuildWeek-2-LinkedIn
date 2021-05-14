@@ -50,6 +50,14 @@
   position: absolute !important;
   top: -70px;
 }
+
+.momentpos {
+  font-size: 12px;
+  color: #5d5d5d;
+  position: relative;
+  top: -60px;
+  left: 380px;
+}
 @media only screen and (max-width: 767px) {
   .reactions-wrapper {
     margin: 10px;
@@ -57,5 +65,55 @@
   .post-body {
     width: 100%;
     max-width: 50%;
+  }
+}
+@media only screen and (max-width: 1226px) {
+  .momentpos {
+    left: 360px;
+  }
+}
+@media only screen and (max-width: 1172px) {
+  .momentpos {
+    left: 340px;
+  }
+}
+@media only screen and (max-width: 1118px) {
+  .momentpos {
+    left: 320px;
+  }
+}
+@media only screen and (max-width: 1068px) {
+  .momentpos {
+    left: 300px;
+  }
+}
+@media only screen and (max-width: 1032px) {
+  .momentpos {
+    left: 250px;
+  }
+}
+@media only screen and (max-width: 917px) {
+  .momentpos {
+    left: 220px;
+  }
+}
+@media only screen and (max-width: 916px) {
+  .momentpos {
+    left: 500px;
+  }
+}
+@media only screen and (max-width: 706px) {
+  .momentpos {
+    left: 240px;
+  }
+}
+@media only screen and (max-width: 468px) {
+  .momentpos {
+    left: 200px;
+  }
+}
+@media only screen and (max-width: 410px) {
+  .momentpos {
+    left: 180px;
   }
 }

@@ -10,7 +10,7 @@ import ChatIcon from "@material-ui/icons/SmsRounded";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import ViewModuleIcon from "@material-ui/icons/ViewModule";
 import { Link } from "react-router-dom";
-
+import PersonIcon from "@material-ui/icons/Person";
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 function Header() {
   const [userInfo, setUserInfo] = useState({});
@@ -50,7 +50,6 @@ function Header() {
               <img
                 draggable="false"
                 src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg"
-                alt="header-pic"
               />
             </Link>
             <SearchIcon style={{ backgroundColor: "#eef3f8" }} />
@@ -58,7 +57,7 @@ function Header() {
           </div>
           <Link to="/me">
             <div id="small_icon">
-              <img src={userInfo} alt="user-pic" />
+              <PersonIcon />
             </div>
           </Link>
           <div className="header_right">

@@ -7,6 +7,9 @@
   flex: 0;
   padding-top: 5px;
 }
+.MuiAvatar-img {
+  width: auto !important;
+}
 .header {
   align-items: center;
   padding-bottom: 0 !important;
@@ -41,7 +44,7 @@
   border: none;
   background: none;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 916px) {
   .search input {
     display: none;
   }
@@ -70,7 +73,7 @@
 .MuiSvgIcon-root {
   margin-right: 25px;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 916px) {
   #small_icon {
     padding-left: 5px;
     margin-top: 8px;
@@ -78,7 +81,7 @@
     content: " \00A7";
   }
 }
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 916px) {
   #small_icon {
     display: none;
   }
