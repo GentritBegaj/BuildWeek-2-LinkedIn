@@ -9,6 +9,7 @@ import { withRouter } from "react-router";
 import { ReactionBarSelector } from "@charkour/react-reactions";
 import { SlackSelector } from "@charkour/react-reactions";
 import Moment from "react-moment";
+
 const Post = ({
   post,
   createdAt,
@@ -33,6 +34,12 @@ const Post = ({
   const executeOnClick = () => {
     setExpanded(true);
   };
+  const numberOfReactions =
+    post.likes.length +
+    post.insightfuls.length +
+    post.loves.length +
+    post.supports.length +
+    post.celebrates.length;
   const [reactionsShow, setReactionsShow] = useState(false);
   const postLike = async (e) => {
     const reaction = e;
@@ -63,6 +70,7 @@ const Post = ({
           <div className="d-flex justify-content-between">
             <div className="profilePic-wrapper">
               <img
+                draggable="false"
                 draggable="false"
                 src={profilePic}
                 alt="profile-pic"
@@ -110,13 +118,20 @@ const Post = ({
         </div>
         <div className="postImage-wrapper">
           {postImage && (
-            <img draggable="false" src={postImage} alt="post-img" />
+            <img
+              draggable="false"
+              draggable="false"
+              src={postImage}
+              alt="post-img"
+            />
           )}
         </div>
         <div className="likes-wrapper" style={{ display: "flex" }}>
           <div>
             {post.likes && post.likes.length > 0 && (
               <img
+                draggable="false"
+                className="like"
                 src="https://static-exp1.licdn.com/sc/h/36xg5gxpnrq56ebbj1wla5x2n"
                 alt="like"
               />
@@ -125,6 +140,8 @@ const Post = ({
           <div>
             {post.celebrates && post.celebrates.length > 0 && (
               <img
+                draggable="false"
+                className="celebrate"
                 src="https://static-exp1.licdn.com/sc/h/1zk00q5n4o055s08tjpy4rswf"
                 alt="celebrate"
               />
@@ -133,6 +150,8 @@ const Post = ({
           <div>
             {post.supports && post.supports.length > 0 && (
               <img
+                draggable="false"
+                className="support"
                 src="https://static-exp1.licdn.com/sc/h/6xvr3hrj4c24dak8r7z64pgj3"
                 alt="support"
               />
@@ -141,6 +160,8 @@ const Post = ({
           <div>
             {post.loves && post.loves.length > 0 && (
               <img
+                draggable="false"
+                className="love"
                 src="https://static-exp1.licdn.com/sc/h/7rghal44zenlhabcjrr4ow7gk"
                 alt="love"
               />
@@ -149,6 +170,8 @@ const Post = ({
           <div>
             {post.insightfuls && post.insightfuls.length > 0 && (
               <img
+                draggable="false"
+                className="insightful"
                 src="https://static-exp1.licdn.com/sc/h/9wjxk9w5wguhpev3dm13672dq"
                 alt="inisghtful"
               />
@@ -157,10 +180,18 @@ const Post = ({
           <div>
             {post.curiouss && post.curiouss.length > 0 && (
               <img
+                draggable="false"
+                className="curious"
                 src="https://static-exp1.licdn.com/sc/h/3tn3hb1r3nls9c4ddwbg2pymr"
                 alt="curious"
               />
             )}
+          </div>
+
+          <div className="d-flex justify-content-center align-items-center">
+            <p className="who-liked">
+              {numberOfReactions > 0 ? `${numberOfReactions} reactions` : null}
+            </p>
           </div>
         </div>
         <div class="reactions-numerator"></div>
@@ -178,6 +209,7 @@ const Post = ({
 
                           node: (
                             <img
+                              draggable="false"
                               src="https://static-exp1.licdn.com/sc/h/36xg5gxpnrq56ebbj1wla5x2n"
                               alt="like-icon"
                             />
@@ -187,7 +219,8 @@ const Post = ({
                           label: "celebrate",
                           node: (
                             <img
-                              src="https://static-exp1.licdn.com/sc/h/9wjxk9w5wguhpev3dm13672dq"
+                              draggable="false"
+                              src="https://static-exp1.licdn.com/sc/h/1zk00q5n4o055s08tjpy4rswf"
                               alt="insightful-icon"
                             />
                           ),
@@ -196,6 +229,7 @@ const Post = ({
                           label: "support",
                           node: (
                             <img
+                              draggable="false"
                               src="https://static-exp1.licdn.com/sc/h/6xvr3hrj4c24dak8r7z64pgj3"
                               alt="celebrate-icon"
                             />
@@ -205,6 +239,7 @@ const Post = ({
                           label: "love",
                           node: (
                             <img
+                              draggable="false"
                               src="https://static-exp1.licdn.com/sc/h/7rghal44zenlhabcjrr4ow7gk"
                               alt="love-icon"
                             />
@@ -214,7 +249,8 @@ const Post = ({
                           label: "insightful",
                           node: (
                             <img
-                              src="https://static-exp1.licdn.com/sc/h/1zk00q5n4o055s08tjpy4rswf"
+                              draggable="false"
+                              src="https://static-exp1.licdn.com/sc/h/9wjxk9w5wguhpev3dm13672dq"
                               alt="celebrate-icon"
                             />
                           ),
@@ -224,6 +260,7 @@ const Post = ({
                           label: "curious",
                           node: (
                             <img
+                              draggable="false"
                               src="https://static-exp1.licdn.com/sc/h/3tn3hb1r3nls9c4ddwbg2pymr"
                               alt="like-icon"
                             />
@@ -252,6 +289,7 @@ const Post = ({
                     ) {
                       return (
                         <img
+                          draggable="false"
                           height="20"
                           src="https://media.discordapp.net/attachments/841212509343580162/842580036922245180/icons8-facebook-like-64.png"
                           alt="likeico"
@@ -260,6 +298,7 @@ const Post = ({
                     } else {
                       return (
                         <img
+                          draggable="false"
                           height="20"
                           src="https://media.discordapp.net/attachments/819321346629566514/842714258127323146/icons8-facebook-like-64_1.png"
                           alt="likeico"
@@ -276,6 +315,7 @@ const Post = ({
               style={{ cursor: "pointer" }}
             >
               <img
+                draggable="false"
                 height="20"
                 src="https://cdn.discordapp.com/attachments/819321346629566514/842693332139638784/icons8-chat-message-100.png"
                 alt="likeico"
@@ -283,6 +323,7 @@ const Post = ({
             </div>
             <div className="col-3 " style={{ cursor: "pointer" }}>
               <img
+                draggable="false"
                 height="20"
                 src="https://cdn.discordapp.com/attachments/819321346629566514/842693345644904448/icons8-share-80.png"
                 alt="likeico"
@@ -290,6 +331,7 @@ const Post = ({
             </div>
             <div className="col-3 ">
               <img
+                draggable="false"
                 height="20"
                 src="https://cdn.discordapp.com/attachments/819321346629566514/842693369247563796/icons8-email-send-80.png"
                 alt="likeico"

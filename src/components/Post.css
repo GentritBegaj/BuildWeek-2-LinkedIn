@@ -3,7 +3,35 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.likes-wrapper {
+  margin-top: 2px;
+  margin-left: 10px;
+}
+.like {
+  height: 25px;
+}
+.celebrate {
+  height: 25px;
+}
+.support {
+  height: 25px;
+}
+.love {
+  height: 25px;
+}
+.insightful {
+  height: 25px;
+}
+.curious {
+  height: 25px;
+}
+.who-liked {
+  position: relative;
+  top: 5px;
+  font-size: 12px;
+  color: #496aff;
+  cursor: pointer;
+}
 .post-wrapper {
   contain: content;
   background-color: rgb(252, 249, 250);
