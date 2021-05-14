@@ -68,10 +68,12 @@ function Header() {
             <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
             <HeaderOption Icon={ChatIcon} title="Messaging" />
             <HeaderOption Icon={NotificationsIcon} title="Notifications" />
-            <div className="border-right">
-              <Link to="/me">
-                <HeaderOption avatar={userInfo.image} title="Me" />
-              </Link>
+            <div className="border-right d-flex ">
+              <HeaderOption
+                userInfo={userInfo}
+                avatar={userInfo.image}
+                title="Me"
+              />
             </div>
             <HeaderOption
               changing
