@@ -52,7 +52,8 @@ export default class NewsFeed extends Component {
                 .slice(0, 30)
                 .map((post) => (
                   <Post
-                    updatedAt={post.updatedAt}
+                    post={post}
+                    createdAt={post.createdAt}
                     comments={post.comments}
                     userInfo={this.props.userInfo}
                     key={post._id}

@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import { FormControl, Dropdown } from "react-bootstrap";
+import CardInfoDropdown from "./CardInfoDropdown";
+import { Link } from "react-router-dom";
+
 class DropDown extends React.Component {
-  render() {
+  state = {
+    userInfo: this.props.userInfo,
+  };
+
+  
+  render() { 
     const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
       <a
         style={{
@@ -19,34 +27,6 @@ class DropDown extends React.Component {
         &#x25BE;
       </a>
     ));
-    const CustomMenu = React.forwardRef(
-      ({ children, style, className, "aria-labelledby": labeledBy }, ref) => {
-        const [value, setValue] = useState("");
-
-        return (
-          <div
-            ref={ref}
-            style={style}
-            className={className}
-            aria-labelledby={labeledBy}
-          >
-            <FormControl
-              autoFocus
-              className="mx-3 my-2 w-auto"
-              placeholder="Type to filter..."
-              onChange={(e) => setValue(e.target.value)}
-              value={value}
-            />
-            <ul className="list-unstyl">
-              {React.Children.toArray(children).filter(
-                (child) =>
-                  !value || child.props.children.toLowerCase().startsWith(value)
-              )}
-            </ul>
-          </div>
-        );
-      }
-    );
     return (
       <Dropdown>
         <Dropdown.Toggle
@@ -55,10 +35,36 @@ class DropDown extends React.Component {
         ></Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item eventKey="1"></Dropdown.Item>
-          <Dropdown.Item eventKey="2"></Dropdown.Item>
-          <Dropdown.Item eventKey="3"></Dropdown.Item>
-          <Dropdown.Item eventKey="1"></Dropdown.Item>
+          <Dropdown.Item className="text-muted px-0 py-0" eventKey="1">
+            <CardInfoDropdown userInfo={this.props.userInfo} />
+          </Dropdown.Item>
+          <Dropdown.Header className="font-weight-bold text-reset">
+            Account
+          </Dropdown.Header>
+          <Dropdown.Item className="text-muted" eventKey="1">
+            Settings & Privacy
+          </Dropdown.Item>
+          <Dropdown.Item className="text-muted" eventKey="2">
+            Help
+          </Dropdown.Item>
+          <Dropdown.Item className="text-muted" eventKey="3">
+            Language
+          </Dropdown.Item>
+          <Dropdown.Divider />
+          <Dropdown.Header className="font-weight-bold text-reset">
+            Manage
+          </Dropdown.Header>
+          <Dropdown.Item className="text-muted" eventKey="4">
+            Posts and Activity
+          </Dropdown.Item>
+          <Dropdown.Item className="text-muted" eventKey="5">
+            Job posting account
+          </Dropdown.Item>
+          <Dropdown.Item className="text-muted" eventKey="6">
+            <Link to="/">
+            Sign Out
+            </Link>
+          </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     );

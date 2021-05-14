@@ -1,8 +1,9 @@
 * {
   transition: 0.55s ease;
 }
+
 .login {
-  background-color: #bfb6b5;
+  background-color: #dad5d5;
   /* background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png"); */
 
   height: 100vh;

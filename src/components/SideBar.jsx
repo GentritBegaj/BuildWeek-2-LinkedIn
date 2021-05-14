@@ -1,8 +1,8 @@
 import "../css/SideBar.css";
 import TurnedInIcon from "@material-ui/icons/TurnedIn";
 import AddIcon from "@material-ui/icons/Add";
-
 import { withRouter } from "react-router";
+import "./CardInfoDropdown.css"
 const SideBar = (props) => {
   return (
     <>
