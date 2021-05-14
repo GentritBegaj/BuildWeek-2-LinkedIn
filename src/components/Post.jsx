@@ -38,7 +38,7 @@ const Post = ({
     const reaction = e;
     try {
       const res = await fetch(
-        `http://localhost:5000/v1/posts/${postId}/user/${userInfo._id}/${reaction}`,
+        `https://linkedinnn.herokuapp.com/v1/posts/${postId}/user/${userInfo._id}/${reaction}`,
         {
           method: "POST",
           headers: {

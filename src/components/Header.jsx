@@ -46,7 +46,7 @@ function Header() {
       <Row className="header">
         <Col className="header_left">
           <div className="search">
-            <Link to="/">
+            <Link to="/feed">
               <img
                 draggable="false"
                 src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg"
@@ -61,7 +61,7 @@ function Header() {
             </div>
           </Link>
           <div className="header_right">
-            <Link to="/">
+            <Link to="/feed">
               <HeaderOption Icon={HomeIcon} title="Home" />
             </Link>
             <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
