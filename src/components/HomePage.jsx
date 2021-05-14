@@ -73,7 +73,7 @@ export default class HomePage extends Component {
 
       if (response.ok) {
         const data = await response.json();
-        this.addPictureToPost(data._id, pic);
+        this.addPictureToPost(data._id, userId ,pic);
       } else {
         console.log("Error while adding post");
       }
@@ -153,7 +153,8 @@ export default class HomePage extends Component {
 
   addPictureToPost = async (postId, userId, pic) => {
     let formData = new FormData();
-    formData.append("post", pic);
+    formData.append("imagePost", pic);
+    console.log(formData)
     try {
       const response = await fetch(
         `https://linkedinnn.herokuapp.com/v1/posts/${postId}/user/${userId}`,
