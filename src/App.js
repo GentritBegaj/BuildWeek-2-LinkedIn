@@ -51,8 +51,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        {console.log(this.props.history)}
-        {this.props.history.location.pathname !== ("/" && "/register") && (
+        {this.props.history.location.pathname !== "/" && (
           <div className="d-flex justify-content-center">
             <Header
             // userInfo={this.state.userInfo}
