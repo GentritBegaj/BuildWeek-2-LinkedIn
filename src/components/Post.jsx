@@ -35,6 +35,10 @@ const Post = ({
   };
   const [reactionsShow, setReactionsShow] = useState(false);
 
+  const logConsole = () => {
+    console.log("AAAAAAAAAAA");
+  };
+
   return (
     <>
       <div className="post-wrapper">
@@ -100,38 +104,57 @@ const Post = ({
                         {
                           label: "like",
                           node: (
-                            <img src="https://static-exp1.licdn.com/sc/h/36xg5gxpnrq56ebbj1wla5x2n" />
+                            <img
+                              src="https://static-exp1.licdn.com/sc/h/36xg5gxpnrq56ebbj1wla5x2n"
+                              onClick={() => logConsole}
+                              alt="like-icon"
+                            />
                           ),
                         },
                         {
                           label: "insightful",
                           node: (
-                            <img src="https://static-exp1.licdn.com/sc/h/9wjxk9w5wguhpev3dm13672dq" />
+                            <img
+                              src="https://static-exp1.licdn.com/sc/h/9wjxk9w5wguhpev3dm13672dq"
+                              alt="insightful-icon"
+                            />
                           ),
                         },
                         {
                           label: "celebrate",
                           node: (
-                            <img src="https://static-exp1.licdn.com/sc/h/6xvr3hrj4c24dak8r7z64pgj3" />
+                            <img
+                              src="https://static-exp1.licdn.com/sc/h/6xvr3hrj4c24dak8r7z64pgj3"
+                              alt="celebrate-icon"
+                            />
                           ),
                         },
                         {
                           label: "love",
                           node: (
-                            <img src="https://static-exp1.licdn.com/sc/h/7rghal44zenlhabcjrr4ow7gk" />
+                            <img
+                              src="https://static-exp1.licdn.com/sc/h/7rghal44zenlhabcjrr4ow7gk"
+                              alt="love-icon"
+                            />
                           ),
                         },
                         {
                           label: "celebrate",
                           node: (
-                            <img src="https://static-exp1.licdn.com/sc/h/1zk00q5n4o055s08tjpy4rswf" />
+                            <img
+                              src="https://static-exp1.licdn.com/sc/h/1zk00q5n4o055s08tjpy4rswf"
+                              alt="celebrate-icon"
+                            />
                           ),
                         },
 
                         {
                           label: "curious",
                           node: (
-                            <img src="https://static-exp1.licdn.com/sc/h/3tn3hb1r3nls9c4ddwbg2pymr" />
+                            <img
+                              src="https://static-exp1.licdn.com/sc/h/3tn3hb1r3nls9c4ddwbg2pymr"
+                              alt="like-icon"
+                            />
                           ),
                         },
                       ]}
