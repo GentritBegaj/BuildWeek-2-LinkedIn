@@ -12,7 +12,10 @@ const SideBar = (props) => {
             <div id="cardTop"></div>
             <div id="idImage">
               {!props.userInfo.image ? (
-                <img src="https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"></img>
+                <img
+                  src="https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"
+                  alt="loader"
+                />
               ) : (
                 <img
                   draggable="false"

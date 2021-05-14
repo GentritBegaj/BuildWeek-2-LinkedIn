@@ -3,6 +3,7 @@ import { Col, Container, Row, Spinner } from "react-bootstrap";
 import CreatePost from "./CreatePost";
 import Post from "./Post";
 import ContentLoader, { Facebook } from "react-content-loader";
+
 export default class NewsFeed extends Component {
   MyFacebookLoader = () => <Facebook />;
   render() {
@@ -51,6 +52,7 @@ export default class NewsFeed extends Component {
                 .slice(0, 30)
                 .map((post) => (
                   <Post
+                    updatedAt={post.updatedAt}
                     comments={post.comments}
                     userInfo={this.props.userInfo}
                     key={post._id}

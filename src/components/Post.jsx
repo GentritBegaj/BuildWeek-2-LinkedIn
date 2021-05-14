@@ -12,7 +12,9 @@ import EditPostModal from "./EditPostModal";
 import { withRouter } from "react-router";
 import { ReactionBarSelector } from "@charkour/react-reactions";
 import { SlackSelector } from "@charkour/react-reactions";
+import Moment from "react-moment";
 const Post = ({
+  updatedAt,
   userInfo,
   postId,
   name,
@@ -57,7 +59,12 @@ const Post = ({
                   {name} {surname}
                 </strong>
               </h5>
+
               <p style={{ marginTop: "-7px" }}>{description}</p>
+
+              <Moment className="momentpos" fromNow>
+                {updatedAt}
+              </Moment>
             </div>
           </div>
           <div>
@@ -139,18 +146,34 @@ const Post = ({
                   </div>
                 )}
                 <div onClick={() => setReactionsShow(!reactionsShow)}>
-                  <InputOption Icon={ThumbUpAltIcon} title={"Like"} />
+                  <img
+                    height="20"
+                    src="https://media.discordapp.net/attachments/841212509343580162/842580036922245180/icons8-facebook-like-64.png"
+                    alt="likeico"
+                  />
                 </div>
               </div>
             </div>
             <div className="col-3 ">
-              <InputOption Icon={ChatIcon} title={"Comnt"} />
+              <img
+                height="20"
+                src="https://media.discordapp.net/attachments/841212509343580162/842580604624961546/icons8-topic.gif"
+                alt="likeico"
+              />
             </div>
             <div className="col-3 ">
-              <InputOption Icon={ShareIcon} title={"Share"} />
+              <img
+                height="20"
+                src="https://media.discordapp.net/attachments/841212509343580162/842581087586222090/icons8-connect.gif"
+                alt="likeico"
+              />
             </div>
             <div className="col-3 ">
-              <InputOption Icon={SendIcon} title={"Send"} />
+              <img
+                height="20"
+                src="https://media.discordapp.net/attachments/841212509343580162/842581546057203762/icons8-chat-message.gif"
+                alt="likeico"
+              />
             </div>
           </div>
         </div>
